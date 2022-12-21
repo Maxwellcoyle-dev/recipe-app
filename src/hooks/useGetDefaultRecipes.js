@@ -16,7 +16,7 @@ export const useGetDefaultRecipes = () => {
     queryKey: ["default-recipes"],
     queryFn: fetchDefaultRecipes,
     enabled: true,
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
   });
