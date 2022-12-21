@@ -33,7 +33,9 @@ export const RecipeView = () => {
               <p>by {recipeItem?.source}</p>
             </a>
             <div className={styles.buttonDiv}>
-              <button className={styles.primaryBtn}>See Full Recipe</button>
+              <a href={recipeItem?.url} target="_blank">
+                <button className={styles.primaryBtn}>See Full Recipe</button>
+              </a>
               {found ? (
                 <button
                   className={styles.secondaryBtn}
