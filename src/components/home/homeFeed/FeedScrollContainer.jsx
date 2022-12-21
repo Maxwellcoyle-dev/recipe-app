@@ -123,7 +123,7 @@ export const FeedScrollContainer = ({ recipes, status }) => {
         }
       }
     }
-  }, [scrollDistance]);
+  }, [scrollDistance, status]);
 
   const loadingState = (
     <div className={styles.spinnerContainer}>
@@ -139,7 +139,7 @@ export const FeedScrollContainer = ({ recipes, status }) => {
 
   const errorState = (
     <div className={styles.errorContainer}>
-      <img src={error} />
+      <img alt="there was an error loading this content" src={error} />
       <p>Error</p>
     </div>
   );

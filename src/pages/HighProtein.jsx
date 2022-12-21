@@ -99,7 +99,7 @@ export const HighProtein = () => {
 
   const errorState = (
     <div className={styles.errorContainer}>
-      <img src={error} />
+      <img alt="there was an error loading this content" src={error} />
       <p>Error</p>
     </div>
   );

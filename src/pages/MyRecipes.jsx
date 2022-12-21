@@ -72,7 +72,7 @@ export const MyRecipes = () => {
       ) : (
         <div className={styles.addRecipesContainer}>
           <p>Save Recipes by adding to "My Recipes"</p>
-          <img src={addRecipes} />
+          <img alt="a person doing online research" src={addRecipes} />
         </div>
       )}
     </myRecipesContext.Provider>

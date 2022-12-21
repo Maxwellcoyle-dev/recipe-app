@@ -86,33 +86,3 @@ const fetchSoups = async () => {
       return response.data;
     });
 };
-
-const fetchSandwiches = async () => {
-  return await axios
-    .get(
-      `https://api.edamam.com/api/recipes/v2?type=public&app_id=5aaef2eb&app_key=${process.env.REACT_APP_API_SECRET}&dishType=Sandwiches&random=true`
-    )
-    .then((response) => {
-      return response.data;
-    });
-};
-
-const fetchSauces = async () => {
-  return await axios
-    .get(
-      `https://api.edamam.com/api/recipes/v2?type=public&app_id=5aaef2eb&app_key=${process.env.REACT_APP_API_SECRET}&dishType=Condiments%20and%20sauces&random=true`
-    )
-    .then((response) => {
-      return response.data;
-    });
-};
-
-const fetchDesserts = async () => {
-  return await axios
-    .get(
-      `https://api.edamam.com/api/recipes/v2?type=public&app_id=5aaef2eb&app_key=${process.env.REACT_APP_API_SECRET}&dishType=Desserts&random=true`
-    )
-    .then((response) => {
-      return response.data;
-    });
-};

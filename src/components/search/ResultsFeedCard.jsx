@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import styles from "../../styles/pages/search/search.module.css";
 import { BsCardChecklist, BsClockHistory } from "react-icons/bs";
 import { useContext } from "react";
 import { appContext } from "../../context/appContext";
 
 export const ResultsFeedCard = ({ recipe }) => {
-  const { setShowRecipeView, setRecipeItem, recipeItem } =
-    useContext(appContext);
+  const { setShowRecipeView, setRecipeItem } = useContext(appContext);
 
   const handleShowRecipeClick = () => {
     setShowRecipeView(true);

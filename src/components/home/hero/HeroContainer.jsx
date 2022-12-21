@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../../../styles/pages/home/home.module.css";
 import "@splidejs/splide/css";
 import { useGetDefaultRecipes } from "../../../hooks/useGetDefaultRecipes";
@@ -9,10 +9,6 @@ import { SpinnerCircular } from "spinners-react";
 
 export const HeroContainer = () => {
   const { defaultRecipesQuery, defaultRecipesStatus } = useGetDefaultRecipes();
-
-  useEffect(() => {
-    console.log(defaultRecipesQuery);
-  }, []);
 
   const loadingState = (
     <div className={styles.spinnerContainer}>
@@ -28,7 +24,7 @@ export const HeroContainer = () => {
 
   const errorState = (
     <div className={styles.errorContainer}>
-      <img src={error} />
+      <img alt="there was an error loading this content" src={error} />
       <p>Error</p>
     </div>
   );

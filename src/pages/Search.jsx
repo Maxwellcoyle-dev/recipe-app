@@ -13,7 +13,6 @@ import { appContext } from "../context/appContext";
 
 export const Search = () => {
   const [searchTopHeight, setSearchTopHeight] = useState({});
-  const [searchScrollStyle, setSearchScrollStyle] = useState({});
   const [searchResults, setSearchResults] = useState([]);
   const { refetchNextPageSearchResults } = useGetNextPageSearchResults();
   const { showRecipeView } = useContext(appContext);
@@ -162,22 +161,6 @@ export const Search = () => {
   useEffect(() => {
     setSearchTopHeight(searchTop.current.clientHeight);
   }, [searchTop]);
-
-  useEffect(() => {
-    if (showFilter) {
-      setSearchScrollStyle({
-        height: "100%",
-        overflowY: "hidden",
-      });
-    } else {
-      setSearchScrollStyle({});
-    }
-  }, [showFilter]);
-
-  const scrollStyles = {
-    height: "100%",
-    overflowY: "hidden",
-  };
 
   return (
     <div className={styles.search}>

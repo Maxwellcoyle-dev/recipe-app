@@ -55,6 +55,7 @@ export const Hero = ({ recipe }) => {
                     </div>
                   );
                 }
+                return null;
               })}
             </div>
           </div>

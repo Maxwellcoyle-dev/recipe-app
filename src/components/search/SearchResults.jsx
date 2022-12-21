@@ -9,22 +9,17 @@ export const SearchResults = ({
   searchTopHeight,
   searchResults,
   setSearchResults,
-  showFilter,
 }) => {
   const { searchResultsQuery } = useGetSearchResults();
   const { nextPageSearchResultsQuery } = useGetNextPageSearchResults();
-  const {
-    searchResultsNextPageUrl,
-    setSearchResultsNextPageUrl,
-    showRecipeView,
-  } = useContext(appContext);
+  const { setSearchResultsNextPageUrl } = useContext(appContext);
 
   useEffect(() => {
     if (searchResultsQuery) {
       setSearchResultsNextPageUrl(searchResultsQuery?._links.next.href);
       setSearchResults(searchResultsQuery.hits);
     }
-  }, [searchResultsQuery]);
+  }, [searchResultsQuery, setSearchResults, setSearchResultsNextPageUrl]);
 
   useEffect(() => {
     if (nextPageSearchResultsQuery) {
@@ -34,7 +29,11 @@ export const SearchResults = ({
         return null;
       });
     }
-  }, [nextPageSearchResultsQuery]);
+  }, [
+    nextPageSearchResultsQuery,
+    setSearchResults,
+    setSearchResultsNextPageUrl,
+  ]);
 
   return (
     searchResults.length > 0 && (
