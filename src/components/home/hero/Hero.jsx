@@ -21,7 +21,7 @@ export const Hero = ({ recipe }) => {
           src={recipe.image}
           className={styles.recipeImage}
         />
-        <button>See Recipe</button>
+        <button onClick={handleShowRecipeClick}>See Recipe</button>
         <SaveIcon recipe={recipe} />
       </div>
       <div className={styles.rightDiv}>
