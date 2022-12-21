@@ -6,7 +6,7 @@ export const useGetHomeFeedRecipes = () => {
     queryKey: ["main-course"],
     queryFn: fetchMainCourse,
     enabled: true,
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
   });
 
@@ -14,7 +14,7 @@ export const useGetHomeFeedRecipes = () => {
     queryKey: ["salad"],
     queryFn: fetchSalads,
     enabled: true,
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
   });
 
@@ -30,7 +30,7 @@ export const useGetHomeFeedRecipes = () => {
     queryKey: ["soup"],
     queryFn: fetchSoups,
     enabled: true,
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchOnWindowFocus: false,
   });
 

@@ -55,7 +55,6 @@ export const HighProtein = () => {
   useEffect(() => {
     if (proteinQuery && !nextPageProteinQuery) {
       setProteinNextPageUrl(proteinQuery._links.next.href);
-      console.log(proteinQuery);
     }
 
     setProteinPageRecipes(proteinQuery?.hits);
