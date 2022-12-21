@@ -1,0 +1,498 @@
+$color-primary: #689c7b;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #58bf72;
+$color-secondary-gray: #7b7773;
+
+.myRecipesPage {
+  margin-top: 6rem;
+  cursor: default;
+  position: relative;
+
+  .overlayWrapper {
+    z-index: 99;
+    position: absolute;
+    height: calc(100vh - 6rem);
+    width: 100%;
+    background-color: #689c7b70;
+    .lightBoxOverlay {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      .lightBox {
+        position: relative;
+        background-color: $color-secondary-white;
+        padding: 2rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-bottom: 10%;
+
+        .headerRow {
+          display: flex;
+          padding-left: 0.5rem;
+          column-gap: 0.5rem;
+
+          h2 {
+            font-size: 1.5rem;
+          }
+
+          .headerIcon {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+
+        .labelBoxForm {
+          padding: 0 2.5rem;
+          display: flex;
+          flex-direction: column;
+          row-gap: 1.5rem;
+
+          input {
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            outline: none;
+            border: none;
+          }
+
+          .colorPicker {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5rem;
+            padding-bottom: 1rem;
+
+            .colorPickerSelectors {
+              display: flex;
+              column-gap: 0.5rem;
+              .colorItem {
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                border: 2px solid transparent;
+                cursor: pointer;
+
+                &:hover {
+                  border: 2px solid black;
+                }
+              }
+            }
+          }
+
+          .buttonDiv {
+            display: flex;
+            width: 100%;
+            column-gap: 1rem;
+            button {
+              width: 50%;
+              cursor: pointer;
+              font-size: 1.1rem;
+              transition: 0.25s;
+            }
+
+            .primaryBtn {
+              background-color: $color-primary;
+              color: $color-secondary-white;
+              border: 1px solid transparent;
+              border-radius: 0.25rem;
+              padding: 0.25rem 0;
+
+              &:hover {
+                background-color: $color-primary-hover;
+              }
+            }
+
+            .secondaryBtn {
+              background-color: white;
+              color: $color-primary;
+              border: 1px solid transparent;
+              border-radius: 0.25rem;
+              padding: 0.25rem 0;
+
+              &:hover {
+                border: 1px solid $color-primary-hover;
+                color: $color-primary-hover;
+              }
+            }
+          }
+        }
+
+        .noteBoxForm {
+          padding: 0 2.5rem;
+          display: flex;
+          flex-direction: column;
+          row-gap: 1.5rem;
+
+          textarea {
+            padding: 0.5rem;
+            height: 10rem;
+            width: 25rem;
+            border: none;
+            outline: none;
+            resize: none;
+          }
+
+          .buttonDiv {
+            display: flex;
+            width: 100%;
+            column-gap: 1rem;
+            button {
+              width: 50%;
+              cursor: pointer;
+              font-size: 1.1rem;
+              transition: 0.25s;
+            }
+
+            .primaryBtn {
+              background-color: $color-primary;
+              color: $color-secondary-white;
+              border: 1px solid transparent;
+              border-radius: 0.25rem;
+              padding: 0.25rem 0;
+
+              &:hover {
+                background-color: $color-primary-hover;
+              }
+            }
+
+            .secondaryBtn {
+              background-color: white;
+              color: $color-primary;
+              border: 1px solid transparent;
+              border-radius: 0.25rem;
+              padding: 0.25rem 0;
+
+              &:hover {
+                border: 1px solid $color-primary-hover;
+                color: $color-primary-hover;
+              }
+            }
+          }
+        }
+
+        .closeIconDiv {
+          position: absolute;
+          top: 2rem;
+          right: 1rem;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 0.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.2s;
+
+          cursor: pointer;
+          .closeIcon {
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: 0.2s;
+          }
+          &:hover {
+            background-color: white;
+
+            .closeIcon {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    display: flex;
+    column-gap: 3rem;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 2rem 0;
+
+    h1 {
+      font-size: 2rem;
+      padding: 0 0 0 2rem;
+    }
+    .cardViewFilter {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      overflow-x: auto;
+
+      .filterIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .cardFilterLabel {
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: 0.2s;
+
+        p {
+          font-weight: 600;
+        }
+
+        &:hover {
+          background-color: $color-secondary-white;
+        }
+      }
+    }
+  }
+
+  .pageContent {
+    display: flex;
+    height: calc(100vh - 11.5rem);
+    overflow: hidden;
+
+    .leftPanel {
+      width: 30%;
+      height: 100%;
+      overflow-y: scroll;
+
+      .directoryPanel {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        row-gap: 1rem;
+        padding: 1rem;
+
+        .directoryItem {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 1rem;
+          background-color: $color-secondary-white;
+          border-radius: 2rem;
+          padding: 0.5rem 1rem;
+
+          .labelDiv {
+            width: fit-content;
+            padding: 0.5rem;
+            width: 85%;
+            h3 {
+              font-size: 1rem;
+              color: $color-primary;
+              cursor: pointer;
+            }
+          }
+
+          .iconContainer {
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+
+            .iconDiv {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 2rem;
+              height: 2rem;
+              border-radius: 0.25rem;
+              cursor: pointer;
+
+              .iconSelected {
+                width: 1.5rem;
+                height: 1.5rem;
+                color: $color-primary;
+              }
+
+              .iconInitial {
+                width: 1.5rem;
+                height: 1.5rem;
+                color: $color-secondary-gray;
+              }
+              &:hover {
+                background-color: white;
+
+                .iconInitial {
+                  color: $color-primary-hover;
+                }
+
+                .iconSelected {
+                  color: $color-primary-hover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .rightPanel {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      padding: 0 1rem;
+
+      .cardViewPanel {
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .myRecipesCard {
+          width: calc((100% - 66%) - 2rem);
+          border-radius: 0.75rem;
+          background-color: $color-secondary-tan;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          .cardIconContainer {
+            display: flex;
+            height: 3rem;
+            align-items: center;
+            padding: 0 0.5rem;
+            justify-content: space-between;
+
+            .iconDiv {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 2.25rem;
+              height: 2.25rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+
+              .iconInitial {
+                width: 1.75rem;
+                height: 1.75rem;
+                color: $color-secondary-gray;
+              }
+
+              .iconSelected {
+                width: 1.75rem;
+                height: 1.75rem;
+                color: $color-primary;
+              }
+              &:hover {
+                background-color: #58bf722b;
+                .iconInitial {
+                  color: $color-primary-hover;
+                }
+              }
+            }
+
+            .iconDiv {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 2.25rem;
+              height: 2.25rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+
+              .iconInitial {
+                width: 1.75rem;
+                height: 1.75rem;
+                color: $color-primary;
+              }
+
+              .iconSelected {
+                width: 1.75rem;
+                height: 1.75rem;
+                color: $color-primary;
+              }
+              &:hover {
+                background-color: #58bf722b;
+                .iconInitial {
+                  color: $color-primary-hover;
+                }
+                .iconSelected {
+                  color: $color-primary-hover;
+                }
+              }
+            }
+          }
+
+          .cardImageDiv {
+            width: 100%;
+            min-height: 9rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+              width: 7.5rem;
+              padding: 0.5rem 1rem;
+              border-radius: 0.5rem;
+              border: none;
+              background-color: transparent;
+              color: transparent;
+              font-weight: 600;
+              transition: 0.25s;
+              cursor: pointer;
+              &:hover {
+                background-color: $color-primary-hover;
+              }
+            }
+            &:hover {
+              background-color: $color-primary-hover;
+              color: black;
+            }
+          }
+
+          .recipeInfoContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 3rem;
+            padding: 0 0.75rem;
+
+            .timeDiv {
+              display: flex;
+              column-gap: 0.5rem;
+            }
+
+            .ingredientDiv {
+              display: flex;
+              column-gap: 0.5rem;
+            }
+          }
+          .titleDiv {
+            padding: 0 0.5rem 1rem 0.5rem;
+            h3 {
+              font-size: 1.3rem;
+            }
+          }
+
+          &:hover {
+            button {
+              background-color: $color-primary;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.addRecipesContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 30%;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

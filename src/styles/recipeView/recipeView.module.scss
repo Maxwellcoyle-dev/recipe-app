@@ -1,0 +1,186 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.recipeViewBackDrop {
+  position: fixed;
+  overflow-y: hidden;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: rgba(128, 128, 128, 0.5);
+
+  .recipeViewCard {
+    position: relative;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 3rem;
+    width: 75%;
+    max-height: 75%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    overflow-y: scroll;
+
+    .headerRow {
+      display: flex;
+      column-gap: 4rem;
+      align-items: center;
+
+      .imgDiv {
+        width: 20%;
+        padding-top: 1rem;
+        img {
+          border-radius: 1rem;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .headerContent {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        h2 {
+          font-size: 1.7rem;
+          padding: 0;
+        }
+
+        a {
+          cursor: pointer;
+          text-decoration: none;
+          color: $color-primary;
+
+          &:hover {
+            color: $color-primary-hover;
+            text-decoration: underline;
+          }
+        }
+
+        .buttonDiv {
+          width: 100%;
+          display: flex;
+          column-gap: 1rem;
+          padding-top: 1rem;
+
+          button {
+            width: 50%;
+            font-weight: 600;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+          }
+
+          .primaryBtn {
+            background-color: $color-primary;
+            color: $color-secondary-white;
+            border: none;
+
+            &:hover {
+              background-color: $color-primary-hover;
+            }
+          }
+
+          .secondaryBtn {
+            background-color: $color-secondary-white;
+            color: $color-primary;
+            border: 1px solid $color-primary;
+
+            &:hover {
+              background-color: $color-primary;
+              color: $color-secondary-white;
+            }
+          }
+        }
+      }
+    }
+
+    .primaryInfoRow {
+      display: flex;
+      column-gap: 2rem;
+
+      .overviewDiv {
+        display: flex;
+        flex-direction: column;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        .items {
+          display: flex;
+          column-gap: 0.5rem;
+          align-items: center;
+          p {
+            border: 1px solid $color-primary;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .infoDiv {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .infoItems {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 0.5rem;
+
+        .ingredientDiv {
+          max-width: fit-content;
+          border: 1px solid $color-primary;
+          border-radius: 0.5rem;
+          background-color: $color-secondary-green;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 0.5rem;
+        }
+      }
+    }
+
+    .exitIconDiv {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .exitIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &:hover {
+        background-color: $color-secondary-white;
+      }
+    }
+  }
+}

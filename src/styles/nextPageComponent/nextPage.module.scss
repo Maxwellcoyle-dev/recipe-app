@@ -1,0 +1,31 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.nextPageDiv {
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 0 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: $color-secondary-white;
+    color: $color-primary;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    border: 1px solid $color-primary;
+
+    &:hover {
+      color: $color-secondary-white;
+      background-color: $color-primary;
+    }
+  }
+}

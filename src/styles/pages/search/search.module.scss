@@ -1,0 +1,389 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.search {
+  z-index: 199;
+  overflow-y: hidden;
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+
+  .stickyItemWrapper {
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    position: fixed;
+    transition: 1s;
+    top: 4rem;
+    height: auto;
+    background-color: white;
+
+    .searchTopWrapper {
+      position: relative;
+
+      .formWrapper {
+        position: relative;
+
+        .searchBarForm {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 0 3rem;
+          padding: 1.5rem 0 0.5rem 0;
+          column-gap: 0.5rem;
+          height: 4rem;
+
+          .searchInput {
+            width: 85%;
+            height: 3rem;
+            padding: 0 0 0 1rem;
+            border: 4px solid $color-primary;
+            border-radius: 1rem;
+            background-color: transparent;
+            font-size: 2.5rem;
+            font-weight: 600;
+            outline: none;
+
+            &:active {
+              border: 4px solid $color-primary-hover;
+              outline: none;
+            }
+
+            &:focus {
+              border: 4px solid $color-primary-hover;
+              outline: none;
+            }
+          }
+
+          button {
+            position: absolute;
+            padding: 0 1.55rem;
+            right: calc(15%);
+            margin: 0 0.25rem;
+            height: 3.5rem;
+            border: 4px solid $color-primary;
+            border-radius: 1rem;
+            background-color: $color-primary;
+            cursor: pointer;
+            transition: 0.2s;
+
+            &:hover {
+              background-color: white;
+            }
+            &:hover .formSearchIcon {
+              color: $color-primary;
+            }
+            &:active {
+              background-color: #fad2a1;
+            }
+
+            .formSearchIcon {
+              width: 2rem;
+              height: 2rem;
+              color: white;
+              transition: 0.2s;
+            }
+          }
+
+          .filterIconDiv {
+            margin: 0.25rem;
+            height: 4rem;
+            padding: 0 0.5rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            cursor: pointer;
+            .filterIcon {
+              width: 3rem;
+              height: 3rem;
+              color: $color-primary;
+            }
+            &:hover {
+              background-color: $color-secondary-white;
+            }
+          }
+        }
+      }
+
+      .searchHistory {
+        padding-left: 3rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        z-index: 2;
+        .historyHeader {
+          display: flex;
+          align-items: baseline;
+          column-gap: 2rem;
+
+          h3 {
+            font-size: 1.5rem;
+          }
+
+          p {
+            font-size: 1.3rem;
+            cursor: pointer;
+          }
+        }
+
+        .historyItems {
+          display: flex;
+          column-gap: 3rem;
+
+          p {
+            font-size: 1.2rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .searchBottomWrapper {
+    position: relative;
+    overflow-y: hidden;
+    padding-top: 2rem;
+    margin-top: 3.5rem;
+    height: auto;
+
+    .resultsPage {
+      padding: 0 3rem;
+      transition: 0.5s;
+      overflow-y: hidden;
+      height: 100%;
+
+      .searchResults {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem 1rem;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem 0 0 0;
+
+        .resultsCard {
+          flex: 20%;
+          border-radius: 1rem;
+          position: relative;
+          cursor: default;
+
+          .resultsImageContainer {
+            height: fit-content;
+
+            .resultsCardBgImage {
+              height: 10rem;
+              border-radius: 1rem;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              background-repeat: no-repeat;
+              background-size: cover;
+
+              &:hover {
+                button {
+                  background-color: $color-secondary-tan;
+                  color: black;
+                }
+
+                .resultsCardOverlay {
+                  transition: 0.2s;
+                  background-image: linear-gradient(
+                    to bottom,
+                    #f5f5f500,
+                    #f5f5f5c7
+                  );
+                }
+              }
+
+              button {
+                position: absolute;
+                width: 7.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                border: none;
+                background-color: transparent;
+                color: transparent;
+                font-weight: 600;
+                transition: 0.75s;
+                cursor: pointer;
+              }
+              &:hover {
+                background-color: $color-primary-hover;
+                color: black;
+              }
+
+              .resultsCardOverlay {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                border-radius: 1rem;
+                background-image: linear-gradient(
+                  to bottom,
+                  #f5f5f500,
+                  #f5f5f584
+                );
+                transition: 0.2s;
+
+                .ingredientDiv,
+                .timeDiv {
+                  display: flex;
+                  gap: 0.25rem;
+                  padding: 0.5rem;
+
+                  .icon {
+                    stroke-width: 0.07rem;
+                    padding: 0.25rem;
+                    width: max-content;
+                  }
+
+                  p {
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                  }
+                }
+              }
+            }
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            width: fit-content;
+            max-width: 85%;
+            padding-top: 0.25rem;
+            cursor: pointer;
+          }
+          &:hover {
+            .resultsImageContainer {
+              .resultsCardBgImage {
+                button {
+                  background-color: $color-primary;
+                  color: rgba(0, 0, 0, 0.543);
+                }
+
+                .resultsCardOverlay {
+                  transition: 0.2s;
+                  background-image: linear-gradient(
+                    to bottom,
+                    #f5f5f500,
+                    #f5f5f5c7
+                  );
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fitlerAnimationWrapper {
+      background-color: white;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      background-color: $color-secondary-white;
+      overflow-y: hidden;
+
+      .filterWrapper {
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+
+        .filterHeader {
+          padding: 1rem 3rem 1rem 3rem;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+
+          h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: $color-primary;
+            vertical-align: middle;
+          }
+          .iconDiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            transition: 0.2s;
+            cursor: pointer;
+            .filterHeaderIcon {
+              height: 2.5rem;
+              width: 2.5rem;
+              color: $color-primary;
+            }
+            &:hover {
+              background-color: white;
+            }
+          }
+        }
+
+        .filterContainer {
+          z-index: 999;
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 3rem 3rem;
+          gap: 2rem;
+
+          h3 {
+            font-size: 1.5rem;
+          }
+
+          .filterBoxContainer {
+            flex: 30%;
+
+            .filterBox {
+              background-color: transparent;
+              border: 3px solid $color-primary;
+              border-radius: 0.5rem;
+              padding: 1rem 0.5rem;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1rem;
+
+              .filterBoxItem {
+                padding: 0.5rem 1rem;
+                font-weight: 600;
+                background-color: transparent;
+                border: 2px solid $color-primary;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                &:hover {
+                  border: 2px solid $color-primary-hover;
+                  background-color: #a0d9be9e;
+                }
+              }
+              .filterBoxItemSelected {
+                padding: 0.5rem 1rem;
+                font-weight: 600;
+                background-color: $color-secondary-green;
+                border: 2px solid $color-primary;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                &:hover {
+                  border: 2px solid $color-primary-hover;
+                  background-color: #a0d9be9e;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

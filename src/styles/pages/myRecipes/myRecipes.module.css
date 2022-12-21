@@ -1,0 +1,440 @@
+.myRecipesPage {
+  margin-top: 6rem;
+  cursor: default;
+  position: relative;
+}
+.myRecipesPage .overlayWrapper {
+  z-index: 99;
+  position: absolute;
+  height: calc(100vh - 6rem);
+  width: 100%;
+  background-color: rgba(104, 156, 123, 0.4392156863);
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox {
+  position: relative;
+  background-color: #f2f2f2;
+  padding: 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 10%;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .headerRow {
+  display: flex;
+  padding-left: 0.5rem;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .headerRow h2 {
+  font-size: 1.5rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .headerRow .headerIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm {
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .colorPicker {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .colorPicker .colorPickerSelectors {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .colorPicker .colorPickerSelectors .colorItem {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .colorPicker .colorPickerSelectors .colorItem:hover {
+  border: 2px solid black;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .buttonDiv {
+  display: flex;
+  width: 100%;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .buttonDiv button {
+  width: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.25s;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .buttonDiv .primaryBtn {
+  background-color: #689c7b;
+  color: #f2f2f2;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .buttonDiv .primaryBtn:hover {
+  background-color: #58bf72;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .buttonDiv .secondaryBtn {
+  background-color: white;
+  color: #689c7b;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .buttonDiv .secondaryBtn:hover {
+  border: 1px solid #58bf72;
+  color: #58bf72;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm {
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm textarea {
+  padding: 0.5rem;
+  height: 10rem;
+  width: 25rem;
+  border: none;
+  outline: none;
+  resize: none;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm .buttonDiv {
+  display: flex;
+  width: 100%;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm .buttonDiv button {
+  width: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.25s;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm .buttonDiv .primaryBtn {
+  background-color: #689c7b;
+  color: #f2f2f2;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm .buttonDiv .primaryBtn:hover {
+  background-color: #58bf72;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm .buttonDiv .secondaryBtn {
+  background-color: white;
+  color: #689c7b;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm .buttonDiv .secondaryBtn:hover {
+  border: 1px solid #58bf72;
+  color: #58bf72;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .closeIconDiv {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .closeIconDiv .closeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.2s;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .closeIconDiv:hover {
+  background-color: white;
+}
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .closeIconDiv:hover .closeIcon {
+  color: #689c7b;
+}
+.myRecipesPage .header {
+  display: flex;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 2rem 0;
+}
+.myRecipesPage .header h1 {
+  font-size: 2rem;
+  padding: 0 0 0 2rem;
+}
+.myRecipesPage .header .cardViewFilter {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  overflow-x: auto;
+}
+.myRecipesPage .header .cardViewFilter .filterIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.myRecipesPage .header .cardViewFilter .cardFilterLabel {
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+.myRecipesPage .header .cardViewFilter .cardFilterLabel p {
+  font-weight: 600;
+}
+.myRecipesPage .header .cardViewFilter .cardFilterLabel:hover {
+  background-color: #f2f2f2;
+}
+.myRecipesPage .pageContent {
+  display: flex;
+  height: calc(100vh - 11.5rem);
+  overflow: hidden;
+}
+.myRecipesPage .pageContent .leftPanel {
+  width: 30%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  row-gap: 1rem;
+  padding: 1rem;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  background-color: #f2f2f2;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .labelDiv {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  width: 85%;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .labelDiv h3 {
+  font-size: 1rem;
+  color: #689c7b;
+  cursor: pointer;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer .iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer .iconDiv .iconSelected {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #689c7b;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer .iconDiv .iconInitial {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #7b7773;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer .iconDiv:hover {
+  background-color: white;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer .iconDiv:hover .iconInitial {
+  color: #58bf72;
+}
+.myRecipesPage .pageContent .leftPanel .directoryPanel .directoryItem .iconContainer .iconDiv:hover .iconSelected {
+  color: #58bf72;
+}
+.myRecipesPage .pageContent .rightPanel {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 0 1rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel {
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard {
+  width: calc(34% - 2rem);
+  border-radius: 0.75rem;
+  background-color: #f2d3ac;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  padding: 0 0.5rem;
+  justify-content: space-between;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv .iconInitial {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #7b7773;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv .iconSelected {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #689c7b;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv:hover {
+  background-color: rgba(88, 191, 114, 0.168627451);
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv:hover .iconInitial {
+  color: #58bf72;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv .iconInitial {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #689c7b;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv .iconSelected {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #689c7b;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv:hover {
+  background-color: rgba(88, 191, 114, 0.168627451);
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv:hover .iconInitial {
+  color: #58bf72;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardIconContainer .iconDiv:hover .iconSelected {
+  color: #58bf72;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardImageDiv {
+  width: 100%;
+  min-height: 9rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardImageDiv button {
+  width: 7.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  font-weight: 600;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardImageDiv button:hover {
+  background-color: #58bf72;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .cardImageDiv:hover {
+  background-color: #58bf72;
+  color: black;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .recipeInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding: 0 0.75rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .recipeInfoContainer .timeDiv {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .recipeInfoContainer .ingredientDiv {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .titleDiv {
+  padding: 0 0.5rem 1rem 0.5rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .titleDiv h3 {
+  font-size: 1.3rem;
+}
+.myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard:hover button {
+  background-color: #689c7b;
+  color: black;
+}
+
+.addRecipesContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.addRecipesContainer img {
+  width: 30%;
+}
+.addRecipesContainer p {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=myRecipes.module.css.map */

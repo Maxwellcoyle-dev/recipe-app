@@ -1,0 +1,163 @@
+.recipeViewBackDrop {
+  position: fixed;
+  overflow-y: hidden;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.recipeViewBackDrop .recipeViewCard {
+  position: relative;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  width: 75%;
+  max-height: 75%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  overflow-y: scroll;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow {
+  display: flex;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  align-items: center;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .imgDiv {
+  width: 20%;
+  padding-top: 1rem;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .imgDiv img {
+  border-radius: 1rem;
+  max-width: 100%;
+  height: auto;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent h2 {
+  font-size: 1.7rem;
+  padding: 0;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #73bf86;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent a:hover {
+  color: #56bf7b;
+  text-decoration: underline;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent .buttonDiv {
+  width: 100%;
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  padding-top: 1rem;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent .buttonDiv button {
+  width: 50%;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent .buttonDiv .primaryBtn {
+  background-color: #73bf86;
+  color: #f2f2f2;
+  border: none;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent .buttonDiv .primaryBtn:hover {
+  background-color: #56bf7b;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent .buttonDiv .secondaryBtn {
+  background-color: #f2f2f2;
+  color: #73bf86;
+  border: 1px solid #73bf86;
+}
+.recipeViewBackDrop .recipeViewCard .headerRow .headerContent .buttonDiv .secondaryBtn:hover {
+  background-color: #73bf86;
+  color: #f2f2f2;
+}
+.recipeViewBackDrop .recipeViewCard .primaryInfoRow {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.recipeViewBackDrop .recipeViewCard .primaryInfoRow .overviewDiv {
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+.recipeViewBackDrop .recipeViewCard .primaryInfoRow .overviewDiv h3 {
+  font-size: 1.3rem;
+}
+.recipeViewBackDrop .recipeViewCard .primaryInfoRow .overviewDiv .items {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  align-items: center;
+}
+.recipeViewBackDrop .recipeViewCard .primaryInfoRow .overviewDiv .items p {
+  border: 1px solid #73bf86;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+.recipeViewBackDrop .recipeViewCard .infoDiv {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.recipeViewBackDrop .recipeViewCard .infoDiv h3 {
+  font-size: 1.3rem;
+}
+.recipeViewBackDrop .recipeViewCard .infoDiv .infoItems {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0.5rem;
+}
+.recipeViewBackDrop .recipeViewCard .infoDiv .infoItems .ingredientDiv {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  border: 1px solid #73bf86;
+  border-radius: 0.5rem;
+  background-color: #a0d9be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+}
+.recipeViewBackDrop .recipeViewCard .exitIconDiv {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.recipeViewBackDrop .recipeViewCard .exitIconDiv .exitIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.recipeViewBackDrop .recipeViewCard .exitIconDiv:hover {
+  background-color: #f2f2f2;
+}/*# sourceMappingURL=recipeView.module.css.map */

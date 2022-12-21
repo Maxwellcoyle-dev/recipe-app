@@ -1,0 +1,31 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.spinnerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorContainer {
+  min-height: 20rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

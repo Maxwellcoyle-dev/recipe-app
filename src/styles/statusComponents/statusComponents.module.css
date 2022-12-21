@@ -1,0 +1,23 @@
+.spinnerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorContainer {
+  min-height: 20rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.errorContainer img {
+  width: 15rem;
+  height: 15rem;
+}
+.errorContainer p {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=statusComponents.module.css.map */

@@ -1,0 +1,222 @@
+.pageFeed {
+  padding-top: 4rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+.pageFeed .header {
+  position: fixed;
+  margin-top: 0rem;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  width: 100%;
+  overflow: hidden;
+  height: 6rem;
+  background-color: white;
+  z-index: 99;
+}
+.pageFeed .header h1 {
+  font-size: 2rem;
+  padding: 0 0 0 2rem;
+}
+.pageFeed .header .cardViewFilter {
+  height: 100;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  overflow-x: auto;
+}
+.pageFeed .header .cardViewFilter .filterIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.pageFeed .header .cardViewFilter .cardFilterLabel {
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+.pageFeed .header .cardViewFilter .cardFilterLabel p {
+  font-weight: 600;
+}
+.pageFeed .header .cardViewFilter .cardFilterLabel:hover {
+  background-color: #f2f2f2;
+}
+.pageFeed .statusImgDiv {
+  margin-top: 8rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pageFeed .statusImgDiv img {
+  width: 50%;
+  height: 50%;
+}
+.pageFeed .statusImgDiv h2 {
+  font-size: 1.75rem;
+}
+.pageFeed h2 {
+  font-size: 2rem;
+  padding: 2rem 3rem;
+}
+.pageFeed .feedCards {
+  margin-top: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  padding: 1rem 3rem 0 3rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 2rem;
+}
+.pageFeed .feedCards .wrappingFeedCard {
+  width: calc(25% - 1rem);
+  border-radius: 1rem;
+  position: relative;
+  cursor: default;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage {
+  height: 10rem;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage:hover button {
+  background-color: #f2d3ac;
+  color: black;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage:hover .feedCardOverlay {
+  transition: 0.2s;
+  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage button {
+  position: absolute;
+  width: 7.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  font-weight: 600;
+  transition: 0.75s;
+  cursor: pointer;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage:hover {
+  background-color: #56bf7b;
+  color: black;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.5176470588));
+  transition: 0.2s;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv,
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv .icon,
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv .icon {
+  stroke-width: 0.07rem;
+  padding: 0.25rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv p,
+.pageFeed .feedCards .wrappingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.pageFeed .feedCards .wrappingFeedCard h3 {
+  font-size: 1.3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 90%;
+  padding-top: 0.25rem;
+  cursor: pointer;
+}
+.pageFeed .feedCards .wrappingFeedCard:hover .feedImageContainer .feedCardBgImage button {
+  background-color: #73bf86;
+  color: rgba(0, 0, 0, 0.543);
+}
+.pageFeed .feedCards .wrappingFeedCard:hover .feedImageContainer .feedCardBgImage .feedCardOverlay {
+  transition: 0.2s;
+  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
+}
+.pageFeed .scrollTopDiv {
+  position: fixed;
+  bottom: 6rem;
+  right: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  background-color: #73bf86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.pageFeed .scrollTopDiv .scrollTopIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #f2f2f2;
+}
+.pageFeed .scrollTopDiv:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #56bf7b;
+}
+.pageFeed .scrollTopDiv:active {
+  box-shadow: none;
+}
+
+.spinnerContainer {
+  min-height: 40rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorContainer {
+  min-height: 20rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.errorContainer img {
+  width: 15rem;
+  height: 15rem;
+}
+.errorContainer p {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=pages.module.css.map */

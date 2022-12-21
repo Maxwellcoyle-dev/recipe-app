@@ -1,0 +1,43 @@
+{
+    "homeSearch": [
+        {
+            "id": 1,
+            "param": "main course",
+            "name": "Main Course"
+        },{
+            "id": 2,
+            "param": "salad",
+            "name": "Salad"
+        },{
+            "id": 3,
+            "param": "side dish",
+            "name": "Side Dish"
+        },
+        {
+            "id": 4,
+            "param": "soup",
+            "name": "Soup"
+        },{
+            "id": 5,
+            "param": "sweets",
+            "name": "Sweets"
+        },{
+            "id": 6,
+            "param": "drinks",
+            "name": "Drinks"
+        },
+        {
+            "id": 7,
+            "param": "desserts",
+            "name": "Desserts"
+        },{
+            "id": 8,
+            "param": "bread",
+            "name": "Bread"
+        },{
+            "id": 9,
+            "param": "sandwiches",
+            "name": "Sandwiches"
+        }
+    ] 
+}

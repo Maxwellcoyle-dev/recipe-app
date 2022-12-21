@@ -1,0 +1,362 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.home {
+  cursor: default;
+  height: 100%;
+
+  .homeContent {
+    padding-top: 6rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .heroContainer {
+      min-height: 70%;
+
+      .sliderComponent {
+        display: flex;
+        justify-content: center;
+        height: 450px;
+
+        .heroSlide {
+          width: 90%;
+          height: 400px;
+          display: flex;
+          align-items: center;
+          column-gap: 3rem;
+
+          .leftDiv {
+            position: relative;
+            display: flex;
+            flex: 30%;
+            align-items: center;
+            justify-content: center;
+
+            .recipeImage {
+              border-radius: 2rem;
+              width: 100%;
+              height: auto;
+            }
+
+            button {
+              position: absolute;
+              padding: 0.5rem 1rem;
+              border: 1px solid transparent;
+              border-radius: 0.5rem;
+              background-color: $color-primary;
+              color: $color-secondary-white;
+              font-size: 1.2rem;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $color-secondary-white;
+                border: 1px solid $color-primary-hover;
+                color: $color-primary-hover;
+              }
+            }
+          }
+
+          .rightDiv {
+            display: flex;
+            flex: 60%;
+            flex-direction: column;
+            row-gap: 0.5rem;
+            h2 {
+              font-size: 2rem;
+            }
+
+            .hLine {
+              width: 5rem;
+              border: 4px solid $color-primary;
+              border-radius: 0.5rem;
+            }
+
+            .rightInfoDiv {
+              padding-top: 1.5rem;
+              display: flex;
+              flex-direction: column;
+              row-gap: 1rem;
+              justify-items: left;
+
+              .heroInfoSection {
+                display: flex;
+                column-gap: 0.5rem;
+
+                .icon {
+                  width: 1.5rem;
+                  height: 1.5rem;
+                }
+
+                .ingredientsContainer {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 0.25rem;
+
+                  .ingredientDiv {
+                    border-radius: 0.5rem;
+                    border: 1px solid $color-primary;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.5rem;
+                  }
+                  .seeRecipe {
+                    align-self: flex-end;
+                    padding-left: 0.5rem;
+                    color: $color-primary;
+                    cursor: pointer;
+
+                    &:hover {
+                      color: $color-primary-hover;
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .spinnerContainer {
+      min-height: 20rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .errorContainer {
+      min-height: 20rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 15rem;
+        height: 15rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .feedCategory {
+      padding: 1rem 2rem 1rem 2rem;
+      position: relative;
+
+      .leftTrigger {
+        position: absolute;
+        left: 1rem;
+        top: 7rem;
+        z-index: 99;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #73bf86ac;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          background-color: $color-primary;
+        }
+
+        .icon {
+          width: 2rem;
+          height: 2rem;
+          stroke-width: 3rem;
+        }
+      }
+      .rightTrigger {
+        position: absolute;
+        right: 1rem;
+        top: 7rem;
+        z-index: 99;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #73bf86ac;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          background-color: $color-primary;
+        }
+
+        .icon {
+          width: 2rem;
+          height: 2rem;
+          stroke-width: 3rem;
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .feedSlider {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .scrollingFeedCard {
+          min-width: calc((100% - 75%) - 1rem);
+          border-radius: 1rem;
+          position: relative;
+          cursor: default;
+
+          .feedImageContainer {
+            height: fit-content;
+
+            .feedCardBgImage {
+              height: 10rem;
+              border-radius: 1rem;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              background-repeat: no-repeat;
+              background-size: cover;
+
+              &:hover {
+                button {
+                  background-color: $color-secondary-tan;
+                  color: black;
+                }
+
+                .feedCardOverlay {
+                  transition: 0.2s;
+                  background-image: linear-gradient(
+                    to bottom,
+                    #f5f5f500,
+                    #f5f5f5c7
+                  );
+                }
+              }
+
+              button {
+                position: absolute;
+                width: 7.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                border: none;
+                background-color: transparent;
+                color: transparent;
+                font-weight: 600;
+                transition: 0.75s;
+                cursor: pointer;
+              }
+              &:hover {
+                background-color: $color-primary-hover;
+                color: black;
+              }
+
+              .feedCardOverlay {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                border-radius: 1rem;
+                background-image: linear-gradient(
+                  to bottom,
+                  #f5f5f500,
+                  #f5f5f584
+                );
+                transition: 0.2s;
+
+                .ingredientDiv,
+                .timeDiv {
+                  display: flex;
+                  gap: 0.25rem;
+                  padding: 0.5rem;
+
+                  .icon {
+                    stroke-width: 0.07rem;
+                    padding: 0.25rem;
+                    width: max-content;
+                  }
+
+                  p {
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                  }
+                }
+              }
+            }
+          }
+
+          h3 {
+            width: fit-content;
+            max-width: 90%;
+            padding-top: 0.25rem;
+            cursor: pointer;
+          }
+          &:hover {
+            .feedImageContainer {
+              .feedCardBgImage {
+                button {
+                  background-color: $color-primary;
+                  color: rgba(0, 0, 0, 0.543);
+                }
+
+                .feedCardOverlay {
+                  transition: 0.2s;
+                  background-image: linear-gradient(
+                    to bottom,
+                    #f5f5f500,
+                    #f5f5f5c7
+                  );
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .percentLine {
+        border: 2px solid $color-primary-hover;
+        border-radius: 0.5rem;
+        background-color: $color-primary-hover;
+      }
+    }
+  }
+}
+
+.nextPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+  }
+}

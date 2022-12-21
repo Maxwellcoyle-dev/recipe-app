@@ -1,0 +1,221 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+
+.navbar {
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: 0.25s;
+  z-index: 9999;
+  background-color: white;
+
+  .navItemContainer {
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 3rem;
+    }
+
+    ul {
+      display: flex;
+      column-gap: 1rem;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        .linkBox {
+          list-style: none;
+          color: $color-primary;
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: 1px solid transparent;
+          transition: 0.25s;
+          cursor: pointer;
+          &:hover {
+            background-color: $color-secondary-white;
+            color: $color-primary-hover;
+          }
+        }
+
+        .selectedLinkBox {
+          text-decoration: none;
+          color: $color-primary;
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: 1px solid $color-primary;
+          transition: 0.25s;
+          cursor: pointer;
+          &:hover {
+            background-color: $color-secondary-white;
+            color: $color-primary-hover;
+          }
+        }
+      }
+    }
+
+    .searchIconBox {
+      height: 3rem;
+      width: 3rem;
+      color: $color-primary;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.25s;
+
+      &:hover {
+        background-color: $color-primary-hover;
+
+        .icon {
+          color: $color-secondary-white;
+        }
+      }
+      .icon {
+        height: 2rem;
+        width: 2rem;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.scrollingNavbar {
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: 0.25s;
+  z-index: 9999;
+  background-color: $color-secondary-white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  .navItemContainer {
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 3rem;
+    }
+
+    ul {
+      display: flex;
+      column-gap: 1rem;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        .linkBox {
+          text-decoration: none;
+          color: $color-primary;
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+          border: 1px solid transparent;
+          border-radius: 0.5rem;
+          transition: 0.25s;
+          cursor: pointer;
+          &:hover {
+            background-color: white;
+            color: $color-primary-hover;
+          }
+        }
+
+        .selectedLinkBox {
+          text-decoration: none;
+          color: $color-primary;
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: 1px solid $color-primary;
+          transition: 0.25s;
+          cursor: pointer;
+          &:hover {
+            background-color: $color-secondary-white;
+            color: $color-primary-hover;
+          }
+        }
+      }
+    }
+
+    .searchIconBox {
+      height: 3rem;
+      width: 3rem;
+      color: $color-primary;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.25s;
+
+      &:hover {
+        background-color: $color-primary-hover;
+
+        .icon {
+          color: $color-secondary-white;
+        }
+      }
+      .icon {
+        height: 2rem;
+        width: 2rem;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.mobileNavbar {
+  background-color: $color-secondary-white;
+  padding: 0 2rem;
+  height: 5rem;
+  width: calc(100vw - 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+
+  img {
+    width: 3rem;
+  }
+
+  .iconBox {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    transition: 0.25s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: white;
+    }
+
+    .icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: $color-primary;
+    }
+  }
+}

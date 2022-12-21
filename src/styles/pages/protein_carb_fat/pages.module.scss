@@ -1,0 +1,263 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.pageFeed {
+  padding-top: 4rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+
+  .header {
+    position: fixed;
+    margin-top: 0rem;
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+    width: 100%;
+    overflow: hidden;
+    height: 6rem;
+    background-color: white;
+    z-index: 99;
+
+    h1 {
+      font-size: 2rem;
+      padding: 0 0 0 2rem;
+    }
+    .cardViewFilter {
+      height: 100;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      overflow-x: auto;
+
+      .filterIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .cardFilterLabel {
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: 0.2s;
+
+        p {
+          font-weight: 600;
+        }
+
+        &:hover {
+          background-color: $color-secondary-white;
+        }
+      }
+    }
+  }
+
+  .statusImgDiv {
+    margin-top: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 50%;
+      height: 50%;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    padding: 2rem 3rem;
+  }
+
+  .feedCards {
+    margin-top: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    padding: 1rem 3rem 0 3rem;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    .wrappingFeedCard {
+      width: calc((100% - 75%) - 1rem);
+      border-radius: 1rem;
+      position: relative;
+      cursor: default;
+
+      .feedImageContainer {
+        height: fit-content;
+
+        .feedCardBgImage {
+          height: 10rem;
+          border-radius: 1rem;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          &:hover {
+            button {
+              background-color: $color-secondary-tan;
+              color: black;
+            }
+
+            .feedCardOverlay {
+              transition: 0.2s;
+              background-image: linear-gradient(
+                to bottom,
+                #f5f5f500,
+                #f5f5f5c7
+              );
+            }
+          }
+
+          button {
+            position: absolute;
+            width: 7.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            background-color: transparent;
+            color: transparent;
+            font-weight: 600;
+            transition: 0.75s;
+            cursor: pointer;
+          }
+          &:hover {
+            background-color: $color-primary-hover;
+            color: black;
+          }
+
+          .feedCardOverlay {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-radius: 1rem;
+            background-image: linear-gradient(to bottom, #f5f5f500, #f5f5f584);
+            transition: 0.2s;
+
+            .ingredientDiv,
+            .timeDiv {
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+              padding: 0.5rem;
+
+              .icon {
+                stroke-width: 0.07rem;
+                padding: 0.25rem;
+                width: max-content;
+              }
+
+              p {
+                font-weight: 600;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        width: fit-content;
+        max-width: 90%;
+        padding-top: 0.25rem;
+        cursor: pointer;
+      }
+      &:hover {
+        .feedImageContainer {
+          .feedCardBgImage {
+            button {
+              background-color: $color-primary;
+              color: rgba(0, 0, 0, 0.543);
+            }
+
+            .feedCardOverlay {
+              transition: 0.2s;
+              background-image: linear-gradient(
+                to bottom,
+                #f5f5f500,
+                #f5f5f5c7
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .scrollTopDiv {
+    position: fixed;
+    bottom: 6rem;
+    right: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    background-color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    .scrollTopIcon {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: $color-secondary-white;
+    }
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background-color: $color-primary-hover;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+
+.spinnerContainer {
+  min-height: 40rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorContainer {
+  min-height: 20rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

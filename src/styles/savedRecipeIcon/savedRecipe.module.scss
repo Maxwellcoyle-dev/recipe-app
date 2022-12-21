@@ -1,0 +1,39 @@
+$color-primary: #73bf86;
+$color-secondary-white: #f2f2f2;
+$color-secondary-tan: #f2d3ac;
+$color-secondary-green: #a0d9be;
+$color-primary-hover: #56bf7b;
+
+.deleteRecipeIconDiv,
+.saveRecipeIconDiv {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  transition: 0.25s;
+  cursor: pointer;
+
+  .saveRecipeIcon {
+    transition: 0.2s;
+    width: 2rem;
+    height: 2rem;
+    color: $color-primary;
+  }
+
+  .deleteRecipeIcon {
+    transition: 0.2s;
+    width: 2rem;
+    height: 2rem;
+    color: $color-primary;
+  }
+
+  &:hover {
+    background-color: #73bf8656;
+  }
+}

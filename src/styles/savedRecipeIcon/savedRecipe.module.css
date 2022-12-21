@@ -1,0 +1,33 @@
+.deleteRecipeIconDiv,
+.saveRecipeIconDiv {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.deleteRecipeIconDiv .saveRecipeIcon,
+.saveRecipeIconDiv .saveRecipeIcon {
+  transition: 0.2s;
+  width: 2rem;
+  height: 2rem;
+  color: #73bf86;
+}
+.deleteRecipeIconDiv .deleteRecipeIcon,
+.saveRecipeIconDiv .deleteRecipeIcon {
+  transition: 0.2s;
+  width: 2rem;
+  height: 2rem;
+  color: #73bf86;
+}
+.deleteRecipeIconDiv:hover,
+.saveRecipeIconDiv:hover {
+  background-color: rgba(115, 191, 134, 0.337254902);
+}/*# sourceMappingURL=savedRecipe.module.css.map */
