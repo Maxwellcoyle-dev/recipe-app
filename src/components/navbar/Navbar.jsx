@@ -42,19 +42,12 @@ export const Navbar = () => {
   }, [location, setShowSearchBar]);
 
   useLayoutEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 900) {
-        setMobileView(true);
-      } else {
-        setMobileView(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [width]);
+    if (window.innerWidth < 900) {
+      setMobileView(true);
+    } else {
+      setMobileView(false);
+    }
+  }, []);
 
   const fullNav = (
     <nav
