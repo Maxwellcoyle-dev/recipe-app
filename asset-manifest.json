@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://Maxwellcoyle-dev.github.io/recipe-app/static/css/main.195c3b67.css",
-    "main.js": "https://Maxwellcoyle-dev.github.io/recipe-app/static/js/main.13f91b64.js",
+    "main.js": "https://Maxwellcoyle-dev.github.io/recipe-app/static/js/main.54eab05f.js",
     "static/media/add-recipes.svg": "https://Maxwellcoyle-dev.github.io/recipe-app/static/media/add-recipes.315e68b7f446a1bf3a1695f307f781eb.svg",
     "static/media/error.svg": "https://Maxwellcoyle-dev.github.io/recipe-app/static/media/error.e5eae0c2c8e4b79f3bf93d783835b531.svg",
     "index.html": "https://Maxwellcoyle-dev.github.io/recipe-app/index.html",
     "main.195c3b67.css.map": "https://Maxwellcoyle-dev.github.io/recipe-app/static/css/main.195c3b67.css.map",
-    "main.13f91b64.js.map": "https://Maxwellcoyle-dev.github.io/recipe-app/static/js/main.13f91b64.js.map"
+    "main.54eab05f.js.map": "https://Maxwellcoyle-dev.github.io/recipe-app/static/js/main.54eab05f.js.map"
   },
   "entrypoints": [
     "static/css/main.195c3b67.css",
-    "static/js/main.13f91b64.js"
+    "static/js/main.54eab05f.js"
   ]
 }
