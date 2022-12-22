@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useRef } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import styles from "../styles/pages/search/search.module.css";
 import { searchContext } from "../context/searchContext";
 import { SearchBar } from "../components/search/SearchBar";
@@ -10,9 +10,11 @@ import { RecipeView } from "../components/recipeView/RecipeView";
 import { NextPage } from "../components/protein_carb_fat/NextPage";
 import { useGetNextPageSearchResults } from "../hooks/useGetNextPageSearchResults";
 import { appContext } from "../context/appContext";
+import { VscHistory } from "react-icons/vsc";
+import { BsFilterLeft } from "react-icons/bs";
 
 export const Search = () => {
-  const [searchTopHeight, setSearchTopHeight] = useState({});
+  const [showSearchHistory, setShowSearchHistory] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const { refetchNextPageSearchResults } = useGetNextPageSearchResults();
   const { showRecipeView } = useContext(appContext);
@@ -24,8 +26,6 @@ export const Search = () => {
     showFilter,
     setShowFilter,
   } = useContext(searchContext);
-
-  const searchTop = useRef(null);
 
   const [healthLabelsCheck, setHealthLabelsCheck] = useState(
     new Array(searchCategories[0].filterItems.length).fill(false)
@@ -152,40 +152,52 @@ export const Search = () => {
       newArr.unshift(input);
       setSearchHistory(newArr);
     }
-  };
 
-  const filterClosedStyle = {
-    boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.1)",
+    setShowFilter(false);
   };
-
-  useEffect(() => {
-    setSearchTopHeight(searchTop.current.clientHeight);
-  }, [searchTop]);
 
   return (
     <div className={styles.search}>
-      <div className={styles.searchBarStickyContainer}>
-        <div className={styles.searchBarStickyItem}>
-          <div className={styles.stickyItemWrapper}>
-            <div
-              className={styles.searchTopWrapper}
-              style={filterClosedStyle}
-              ref={searchTop}
-            >
-              <SearchBar handleSubmit={handleSubmit} />
-              <SearchHistory />
-            </div>
+      <div className={styles.stickyWrapper}>
+        <div className={styles.searchOptionInputs}>
+          <SearchBar handleSubmit={handleSubmit} />
+          <div
+            className={styles.filterIconDiv}
+            onClick={() => setShowFilter(!showFilter)}
+            style={{ borderColor: showFilter && "#73bf86" }}
+          >
+            <BsFilterLeft className={styles.filterIcon} />
+          </div>
+          <div
+            className={styles.searchHistoryIconDiv}
+            onClick={() => setShowSearchHistory(!showSearchHistory)}
+            style={{
+              pointerEvents: searchHistory.length < 1 && "none",
+              borderColor: showSearchHistory && "#73bf86",
+            }}
+          >
+            <VscHistory
+              className={styles.searchHistoryIcon}
+              style={{ color: searchHistory.length < 1 && "gray" }}
+            />
           </div>
         </div>
+        {showSearchHistory && <SearchHistory />}
       </div>
 
-      <div className={styles.searchBottomWrapper}>
-        <SearchResults
-          searchTopHeight={searchTopHeight}
-          showFilter={showFilter}
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
-        />
+      {!showFilter && (
+        <>
+          <SearchResults
+            showFilter={showFilter}
+            searchResults={searchResults}
+            setSearchResults={setSearchResults}
+          />
+          {searchResults.length > 0 && (
+            <NextPage refetchNextPage={refetchNextPageSearchResults} />
+          )}
+        </>
+      )}
+      {showFilter && (
         <FilterContainer
           handleBoxItemClick={handleBoxItemClick}
           healthLabelsCheck={healthLabelsCheck}
@@ -193,13 +205,10 @@ export const Search = () => {
           dishLabelsCheck={dishLabelsCheck}
           dietLabelsCheck={dietLabelsCheck}
           mealLabelsCheck={mealLabelsCheck}
-          searchTopHeight={searchTopHeight}
         />
-        {searchResults.length > 0 && (
-          <NextPage refetchNextPage={refetchNextPageSearchResults} />
-        )}
-        {showRecipeView && <RecipeView />}
-      </div>
+      )}
+
+      {showRecipeView && <RecipeView />}
     </div>
   );
 };

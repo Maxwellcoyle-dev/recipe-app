@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../../styles/pages/search/search.module.css";
 import { searchContext } from "../../context/searchContext";
 
@@ -29,12 +29,10 @@ export const SearchHistory = () => {
 
   return (
     <div className={styles.searchHistory}>
-      <div className={styles.historyHeader}>
-        <h3>Recent Searches</h3>
-        {searchHistory.length > 0 && (
-          <p onClick={handleClearHistory}>Clear All</p>
-        )}
-      </div>
+      {searchHistory.length > 0 && (
+        <p onClick={handleClearHistory}>Clear All</p>
+      )}
+
       <div className={styles.historyItems}>
         {searchHistory.map((item, index) => (
           <p

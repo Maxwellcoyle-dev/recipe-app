@@ -23,14 +23,12 @@ export const savedRecipesReducer = (savedRecipes, action) => {
     }
 
     case "delete-recipe": {
-      console.log(action);
       return savedRecipes?.filter((rec) => rec.recipe.label !== action.label);
     }
 
     case "note-box-toggle": {
       return savedRecipes?.map((rec) => {
         if (rec.showNoteBox) {
-          console.log(rec.showNoteBox);
           return { ...rec, showNoteBox: false };
         }
         if (rec.id === action.id) {
@@ -67,48 +65,6 @@ export const savedRecipesReducer = (savedRecipes, action) => {
       });
     }
 
-    case "label-box-toggle": {
-      return savedRecipes?.map((rec) => {
-        if (rec.showLabelBox) {
-          return { ...rec, showLabelBox: false };
-        }
-        if (rec.id === action.id) {
-          return { ...rec, showLabelBox: true };
-        }
-        return rec;
-      });
-    }
-
-    case "update-new-label": {
-      console.log(action);
-      return savedRecipes?.map((rec) => {
-        if (rec.id === action.id) {
-          return {
-            ...rec,
-            labels: [{ label: action.labelText, color: "" }, ...rec.labels],
-          };
-        }
-        return rec;
-      });
-    }
-
-    case "add-new-label": {
-      return savedRecipes?.map((rec) => {
-        if (rec.id === action.id) {
-          return { ...rec, showLabelBox: false };
-        }
-        return rec;
-      });
-    }
-
-    case "clear-label": {
-      return savedRecipes?.map((rec) => {
-        if (rec.label === action.recipe.label) {
-          return { ...rec, note: "", showEditView: false };
-        }
-        return rec;
-      });
-    }
     default: {
       break;
     }

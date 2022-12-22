@@ -1,14 +1,22 @@
 .myRecipesPage {
+  height: calc(100vh - 6rem);
+  overflow-y: hidden;
   margin-top: 6rem;
+  padding: 0 3rem;
   cursor: default;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
 }
 .myRecipesPage .overlayWrapper {
   z-index: 99;
   position: absolute;
-  height: calc(100vh - 6rem);
+  height: auto;
   width: 100%;
   background-color: rgba(104, 156, 123, 0.4392156863);
+  overflow: hidden;
 }
 .myRecipesPage .overlayWrapper .lightBoxOverlay {
   position: relative;
@@ -181,21 +189,23 @@
 }
 .myRecipesPage .header {
   display: flex;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  flex-direction: column;
+  row-gap: 1rem;
   width: 100%;
   overflow: hidden;
-  padding: 0 0 2rem 0;
 }
 .myRecipesPage .header h1 {
   font-size: 2rem;
-  padding: 0 0 0 2rem;
 }
 .myRecipesPage .header .cardViewFilter {
   display: flex;
   gap: 1rem;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 .myRecipesPage .header .cardViewFilter .filterIcon {
   width: 1.5rem;
@@ -207,9 +217,15 @@
   cursor: pointer;
   border: 2px solid transparent;
   transition: 0.2s;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .myRecipesPage .header .cardViewFilter .cardFilterLabel p {
   font-weight: 600;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .myRecipesPage .header .cardViewFilter .cardFilterLabel:hover {
   background-color: #f2f2f2;
@@ -297,6 +313,7 @@
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 1rem;
 }
 .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard {
@@ -437,4 +454,47 @@
 }
 .addRecipesContainer p {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 950px) {
+  .myRecipesPage {
+    margin-top: 2rem;
+    row-gap: 1rem;
+    height: calc(100vh - 7rem);
+    padding: 0;
+    overflow-y: hidden;
+  }
+  .myRecipesPage .header {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .myRecipesPage .header .cardViewFilter {
+    width: 90%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+  }
+  .myRecipesPage .header .cardViewFilter::-webkit-scrollbar {
+    background-color: #f2f2f2;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+  }
+  .myRecipesPage .header .cardViewFilter::-webkit-scrollbar-thumb {
+    background-color: #689c7b;
+    border-radius: 0.5rem;
+  }
+  .myRecipesPage .header .cardViewFilter::-webkit-scrollbar-thumb:hover {
+    background-color: #58bf72;
+  }
+  .myRecipesPage .pageContent .leftPanel {
+    width: 100%;
+  }
+  .myRecipesPage .pageContent .rightPanel {
+    width: 100%;
+    display: none;
+  }
+  .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard {
+    width: 100%;
+  }
 }/*# sourceMappingURL=myRecipes.module.css.map */

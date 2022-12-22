@@ -10,7 +10,6 @@ export const useGetSearchResults = () => {
     return await axios
       .get(`https://api.edamam.com/api/recipes/v2?${searchParam}`)
       .then((response) => {
-        console.log(response.data);
         return response.data;
       });
   };

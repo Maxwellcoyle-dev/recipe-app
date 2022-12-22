@@ -6,16 +6,24 @@ $color-primary-hover: #58bf72;
 $color-secondary-gray: #7b7773;
 
 .myRecipesPage {
+  height: calc(100vh - 6rem);
+  overflow-y: hidden;
   margin-top: 6rem;
+  padding: 0 3rem;
   cursor: default;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
 
   .overlayWrapper {
     z-index: 99;
     position: absolute;
-    height: calc(100vh - 6rem);
+    height: auto;
     width: 100%;
     background-color: #689c7b70;
+    overflow: hidden;
     .lightBoxOverlay {
       position: relative;
       display: flex;
@@ -209,20 +217,21 @@ $color-secondary-gray: #7b7773;
 
   .header {
     display: flex;
-    column-gap: 3rem;
+    flex-direction: column;
+    row-gap: 1rem;
     width: 100%;
     overflow: hidden;
-    padding: 0 0 2rem 0;
 
     h1 {
       font-size: 2rem;
-      padding: 0 0 0 2rem;
     }
     .cardViewFilter {
       display: flex;
       gap: 1rem;
       align-items: center;
       overflow-x: auto;
+      overflow-y: hidden;
+      height: max-content;
 
       .filterIcon {
         width: 1.5rem;
@@ -235,9 +244,11 @@ $color-secondary-gray: #7b7773;
         cursor: pointer;
         border: 2px solid transparent;
         transition: 0.2s;
+        width: max-content;
 
         p {
           font-weight: 600;
+          width: max-content;
         }
 
         &:hover {
@@ -337,6 +348,7 @@ $color-secondary-gray: #7b7773;
         overflow-y: scroll;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
         gap: 1rem;
 
         .myRecipesCard {
@@ -494,5 +506,56 @@ $color-secondary-gray: #7b7773;
 
   p {
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .myRecipesPage {
+    margin-top: 2rem;
+    row-gap: 1rem;
+    height: calc(100vh - 7rem);
+    padding: 0;
+    overflow-y: hidden;
+
+    .header {
+      height: auto;
+      justify-content: center;
+      align-items: center;
+
+      .cardViewFilter {
+        width: 90%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-bottom: 0.5rem;
+        &::-webkit-scrollbar {
+          background-color: $color-secondary-white;
+          border-radius: 0.5rem;
+          height: 0.5rem;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $color-primary;
+          border-radius: 0.5rem;
+          &:hover {
+            background-color: $color-primary-hover;
+          }
+        }
+      }
+    }
+
+    .pageContent {
+      .leftPanel {
+        width: 100%;
+      }
+
+      .rightPanel {
+        width: 100%;
+        display: none;
+        .cardViewPanel {
+          .myRecipesCard {
+            width: calc(100%);
+          }
+        }
+      }
+    }
   }
 }

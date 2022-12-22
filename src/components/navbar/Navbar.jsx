@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useLayoutEffect } from "react";
 import "../../styles/app/app.module.css";
 import styles from "../../styles/navbar/navbar.module.css";
 import { searchContext } from "../../context/searchContext";
@@ -6,15 +6,17 @@ import { appContext } from "../../context/appContext";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { BsSearch } from "react-icons/bs";
-// import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 
 export const Navbar = () => {
-  // const [mobileView, setMobileView] = useState(false);
+  const [mobileView, setMobileView] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const { setShowSearchBar, showSearchBar } = useContext(searchContext);
   const { setShowRecipeView } = useContext(appContext);
 
   const location = useLocation();
+
+  const width = window.innerWidth;
 
   useEffect(() => {
     const changeNavColor = () => {
@@ -38,6 +40,21 @@ export const Navbar = () => {
       window.removeEventListener("scroll", changeNavColor);
     };
   }, [location, setShowSearchBar]);
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 900) {
+        setMobileView(true);
+      } else {
+        setMobileView(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [width]);
 
   const fullNav = (
     <nav
@@ -150,21 +167,19 @@ export const Navbar = () => {
     </nav>
   );
 
-  // const mobileNav = (
-  //   <nav className={styles.mobileNavbar}>
-  //     <Link to="/">
-  //       <img src={logo} />
-  //     </Link>
-  //     <Link to="/my-recipes" className={styles.iconBox}>
-  //       <AiOutlineStar className={styles.icon} />
-  //     </Link>
-  //     <div className={styles.iconBox}>
-  //       <BsSearch className={styles.icon} />
-  //     </div>
-  //   </nav>
-  // );
+  const mobileNav = (
+    <nav className={styles.mobileNavbar}>
+      <Link to="/">
+        <img src={logo} />
+      </Link>
+      <Link to="/my-recipes" className={styles.iconBox}>
+        <AiOutlineStar className={styles.icon} />
+      </Link>
+      <Link to="/search" className={styles.iconBox}>
+        <BsSearch className={styles.icon} />
+      </Link>
+    </nav>
+  );
 
-  // return mobileView ? mobileNav : fullNav;
-
-  return fullNav;
+  return mobileView ? mobileNav : fullNav;
 };

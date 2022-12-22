@@ -14,6 +14,9 @@ export const DirectoryPanel = () => {
             recipe={item.recipe}
             labels={item.labels}
             key={item.id}
+            id={item.id}
+            showNoteBox={item.showNoteBox}
+            note={item.note}
           />
         );
       })}

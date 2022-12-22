@@ -5,7 +5,7 @@ import { appContext } from "../../context/appContext";
 import { SaveRecipeIcon } from "./IconComponents/SaveRecipeIcon";
 import { RecipeNoteIcon } from "./IconComponents/RecipeNoteIcon";
 
-export const DirectoryItem = ({ recipe }) => {
+export const DirectoryItem = ({ recipe, id, showNoteBox, note }) => {
   const { setShowRecipeView, setRecipeItem } = useContext(appContext);
   const { savedRecipes } = useContext(searchContext);
 
@@ -22,7 +22,7 @@ export const DirectoryItem = ({ recipe }) => {
       </div>
 
       <div className={styles.iconContainer}>
-        <RecipeNoteIcon />
+        <RecipeNoteIcon id={id} showNoteBox={showNoteBox} note={note} />
         <SaveRecipeIcon recipe={recipe} found={found} />
       </div>
     </div>

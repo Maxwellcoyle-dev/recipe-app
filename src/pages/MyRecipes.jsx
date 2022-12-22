@@ -9,6 +9,8 @@ import { NoteLightBox } from "../components/myRecipes/lightboxes/NoteLightBox";
 import { CardViewFilter } from "../components/myRecipes/filterComponents/CardViewFilter";
 import { RecipeView } from "../components/recipeView/RecipeView";
 import addRecipes from "../images/add-recipes.svg";
+import { RiLayoutGridFill } from "react-icons/ri";
+import { BsList } from "react-icons/bs";
 
 export const MyRecipes = () => {
   const [labels, setLabels] = useState([]);

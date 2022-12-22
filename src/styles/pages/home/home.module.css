@@ -9,16 +9,16 @@
   flex-direction: column;
 }
 .home .homeContent .heroContainer {
-  min-height: 70%;
+  padding: 2rem 0;
 }
 .home .homeContent .heroContainer .sliderComponent {
   display: flex;
   justify-content: center;
-  height: 450px;
+  height: auto;
 }
 .home .homeContent .heroContainer .sliderComponent .heroSlide {
   width: 90%;
-  height: 400px;
+  height: auto;
   display: flex;
   align-items: center;
   -moz-column-gap: 3rem;
@@ -127,11 +127,11 @@
 .home .homeContent .errorContainer p {
   font-size: 1.2rem;
 }
-.home .homeContent .feedCategory {
+.home .homeContent .homeFeed .feedCategory {
   padding: 1rem 2rem 1rem 2rem;
   position: relative;
 }
-.home .homeContent .feedCategory .leftTrigger {
+.home .homeContent .homeFeed .feedCategory .leftTrigger {
   position: absolute;
   left: 1rem;
   top: 7rem;
@@ -146,15 +146,15 @@
   cursor: pointer;
   transition: 0.2s;
 }
-.home .homeContent .feedCategory .leftTrigger:hover {
+.home .homeContent .homeFeed .feedCategory .leftTrigger:hover {
   background-color: #73bf86;
 }
-.home .homeContent .feedCategory .leftTrigger .icon {
+.home .homeContent .homeFeed .feedCategory .leftTrigger .icon {
   width: 2rem;
   height: 2rem;
   stroke-width: 3rem;
 }
-.home .homeContent .feedCategory .rightTrigger {
+.home .homeContent .homeFeed .feedCategory .rightTrigger {
   position: absolute;
   right: 1rem;
   top: 7rem;
@@ -169,39 +169,39 @@
   cursor: pointer;
   transition: 0.2s;
 }
-.home .homeContent .feedCategory .rightTrigger:hover {
+.home .homeContent .homeFeed .feedCategory .rightTrigger:hover {
   background-color: #73bf86;
 }
-.home .homeContent .feedCategory .rightTrigger .icon {
+.home .homeContent .homeFeed .feedCategory .rightTrigger .icon {
   width: 2rem;
   height: 2rem;
   stroke-width: 3rem;
 }
-.home .homeContent .feedCategory h3 {
+.home .homeContent .homeFeed .feedCategory h3 {
   font-size: 1.5rem;
   padding-bottom: 0.5rem;
 }
-.home .homeContent .feedCategory .feedSlider {
+.home .homeContent .homeFeed .feedCategory .feedSlider {
   display: flex;
   overflow-x: auto;
   gap: 1rem;
   padding-bottom: 0.5rem;
 }
-.home .homeContent .feedCategory .feedSlider::-webkit-scrollbar {
+.home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar {
   display: none;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard {
   min-width: calc(25% - 1rem);
   border-radius: 1rem;
   position: relative;
   cursor: default;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage {
   height: 10rem;
   border-radius: 1rem;
   position: relative;
@@ -212,15 +212,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover button {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover button {
   background-color: #f2d3ac;
   color: black;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover .feedCardOverlay {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover .feedCardOverlay {
   transition: 0.2s;
   background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage button {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage button {
   position: absolute;
   width: 7.5rem;
   padding: 0.5rem 1rem;
@@ -232,11 +232,11 @@
   transition: 0.75s;
   cursor: pointer;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover {
   background-color: #56bf7b;
   color: black;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay {
   width: 100%;
   height: 100%;
   display: flex;
@@ -246,26 +246,26 @@
   background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.5176470588));
   transition: 0.2s;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv,
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv,
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv {
   display: flex;
   gap: 0.25rem;
   padding: 0.5rem;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv .icon,
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv .icon {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv .icon,
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv .icon {
   stroke-width: 0.07rem;
   padding: 0.25rem;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv p,
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv p {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv p,
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv p {
   font-weight: 600;
   font-size: 1.2rem;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard h3 {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard h3 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -273,15 +273,15 @@
   padding-top: 0.25rem;
   cursor: pointer;
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard:hover .feedImageContainer .feedCardBgImage button {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard:hover .feedImageContainer .feedCardBgImage button {
   background-color: #73bf86;
   color: rgba(0, 0, 0, 0.543);
 }
-.home .homeContent .feedCategory .feedSlider .scrollingFeedCard:hover .feedImageContainer .feedCardBgImage .feedCardOverlay {
+.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard:hover .feedImageContainer .feedCardBgImage .feedCardOverlay {
   transition: 0.2s;
   background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
 }
-.home .homeContent .feedCategory .percentLine {
+.home .homeContent .homeFeed .feedCategory .percentLine {
   border: 2px solid #56bf7b;
   border-radius: 0.5rem;
   background-color: #56bf7b;
@@ -303,4 +303,59 @@
   display: flex;
   list-style: none;
   gap: 0.5rem;
+}
+
+@media screen and (max-width: 950px) {
+  .home .homeContent {
+    padding-top: 2rem;
+  }
+  .home .homeContent .heroContainer .sliderComponent {
+    padding: 0 2rem;
+  }
+  .home .homeContent .heroContainer .sliderComponent .heroSlide {
+    flex-direction: column-reverse;
+  }
+  .home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv {
+    width: 70%;
+    padding-bottom: 2rem;
+  }
+  .home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv .recipeImage {
+    display: none;
+  }
+  .home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv {
+    justify-content: center;
+    align-items: center;
+  }
+  .home .homeContent .homeFeed .feedCategory .leftTrigger {
+    display: none;
+    background-color: transparent;
+  }
+  .home .homeContent .homeFeed .feedCategory .leftTrigger .icon {
+    display: none;
+  }
+  .home .homeContent .homeFeed .feedCategory .rightTrigger {
+    display: none;
+    background-color: transparent;
+  }
+  .home .homeContent .homeFeed .feedCategory .rightTrigger .icon {
+    display: none;
+  }
+  .home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar {
+    display: block;
+    background-color: gray;
+    border-radius: 0.5rem;
+  }
+  .home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar-thumb {
+    background-color: #73bf86;
+    border-radius: 0.5rem;
+  }
+  .home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar-thumb:hover {
+    background-color: #56bf7b;
+  }
+  .home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard {
+    min-width: 100%;
+  }
+  .home .homeContent .homeFeed .feedCategory .percentLine {
+    display: none;
+  }
 }/*# sourceMappingURL=home.module.css.map */

@@ -32,8 +32,6 @@ export const CardViewPanel = () => {
               id={item.id}
               showNoteBox={item.showNoteBox}
               note={item.note}
-              labels={item.labels}
-              showLabelBox={item.showLabelBox}
               key={item.id}
             />
           ))
@@ -43,8 +41,6 @@ export const CardViewPanel = () => {
               id={item.id}
               showNoteBox={item.showNoteBox}
               note={item.note}
-              labels={item.labels}
-              showLabelBox={item.showLabelBox}
               key={item.id}
             />
           ))}

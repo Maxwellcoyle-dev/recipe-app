@@ -1,43 +1,49 @@
 .search {
-  z-index: 199;
-  overflow-y: hidden;
   background-color: white;
-  min-height: 100vh;
-  width: 100%;
+  width: calc(100% - 6rem);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
+  overflow: hidden;
+  position: relative;
+  padding: 0 3rem;
   cursor: default;
 }
-.search .stickyItemWrapper {
-  z-index: 3;
-  position: relative;
-  width: 100%;
+.search .stickyWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  transition: 1s;
-  top: 4rem;
-  height: auto;
+  width: 100%;
+  padding: 2rem 0;
   background-color: white;
+  z-index: 99;
 }
-.search .stickyItemWrapper .searchTopWrapper {
+.search .stickyWrapper .searchOptionInputs {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  width: 100%;
+  height: 4rem;
+}
+.search .stickyWrapper .searchOptionInputs .searchBarForm {
   position: relative;
-}
-.search .stickyItemWrapper .searchTopWrapper .formWrapper {
-  position: relative;
-}
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 0 3rem;
-  padding: 1.5rem 0 0.5rem 0;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
-  height: 4rem;
+  height: 100%;
+  width: 80%;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm .searchInput {
-  width: 85%;
-  height: 3rem;
+.search .stickyWrapper .searchOptionInputs .searchBarForm .searchInput {
+  width: 100%;
+  height: calc(100% - 8px);
   padding: 0 0 0 1rem;
+  margin: 0;
   border: 4px solid #73bf86;
   border-radius: 1rem;
   background-color: transparent;
@@ -45,104 +51,110 @@
   font-weight: 600;
   outline: none;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm .searchInput:active {
+.search .stickyWrapper .searchOptionInputs .searchBarForm .searchInput:active {
   border: 4px solid #56bf7b;
   outline: none;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm .searchInput:focus {
+.search .stickyWrapper .searchOptionInputs .searchBarForm .searchInput:focus {
   border: 4px solid #56bf7b;
   outline: none;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm button {
+.search .stickyWrapper .searchOptionInputs .searchBarForm button {
   position: absolute;
-  padding: 0 1.55rem;
-  right: 15%;
+  right: -4px;
   margin: 0 0.25rem;
-  height: 3.5rem;
+  height: 100%;
+  width: 10%;
   border: 4px solid #73bf86;
   border-radius: 1rem;
   background-color: #73bf86;
   cursor: pointer;
   transition: 0.2s;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm button:hover {
+.search .stickyWrapper .searchOptionInputs .searchBarForm button:hover {
   background-color: white;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm button:hover .formSearchIcon {
+.search .stickyWrapper .searchOptionInputs .searchBarForm button:hover .formSearchIcon {
   color: #73bf86;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm button:active {
+.search .stickyWrapper .searchOptionInputs .searchBarForm button:active {
   background-color: #fad2a1;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm button .formSearchIcon {
+.search .stickyWrapper .searchOptionInputs .searchBarForm button .formSearchIcon {
   width: 2rem;
   height: 2rem;
   color: white;
   transition: 0.2s;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm .filterIconDiv {
-  margin: 0.25rem;
-  height: 4rem;
-  padding: 0 0.5rem;
+.search .stickyWrapper .searchOptionInputs .filterIconDiv {
+  padding: 0.5rem;
   border-radius: 1rem;
+  border: 1px solid transparent;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 0.2s;
   cursor: pointer;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm .filterIconDiv .filterIcon {
+.search .stickyWrapper .searchOptionInputs .filterIconDiv .filterIcon {
   width: 3rem;
   height: 3rem;
   color: #73bf86;
 }
-.search .stickyItemWrapper .searchTopWrapper .formWrapper .searchBarForm .filterIconDiv:hover {
+.search .stickyWrapper .searchOptionInputs .filterIconDiv:hover {
   background-color: #f2f2f2;
 }
-.search .stickyItemWrapper .searchTopWrapper .searchHistory {
-  padding-left: 3rem;
-  padding-bottom: 1rem;
+.search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv .searchHistoryIcon {
+  height: 3rem;
+  width: 3rem;
+  color: #73bf86;
+}
+.search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv:hover {
+  background-color: #f2f2f2;
+}
+.search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv:hover .searchHistoryIcon {
+  color: #56bf7b;
+}
+.search .stickyWrapper .searchHistory {
   display: flex;
   flex-direction: column;
+  width: 100%;
   row-gap: 0.5rem;
   z-index: 2;
 }
-.search .stickyItemWrapper .searchTopWrapper .searchHistory .historyHeader {
-  display: flex;
-  align-items: baseline;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-}
-.search .stickyItemWrapper .searchTopWrapper .searchHistory .historyHeader h3 {
-  font-size: 1.5rem;
-}
-.search .stickyItemWrapper .searchTopWrapper .searchHistory .historyHeader p {
+.search .stickyWrapper .searchHistory p {
   font-size: 1.3rem;
   cursor: pointer;
 }
-.search .stickyItemWrapper .searchTopWrapper .searchHistory .historyItems {
+.search .stickyWrapper .searchHistory .historyItems {
   display: flex;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
 }
-.search .stickyItemWrapper .searchTopWrapper .searchHistory .historyItems p {
+.search .stickyWrapper .searchHistory .historyItems p {
   font-size: 1.2rem;
   cursor: pointer;
 }
-.search .searchBottomWrapper {
-  position: relative;
-  overflow-y: hidden;
-  padding-top: 2rem;
-  margin-top: 3.5rem;
-  height: auto;
-}
-.search .searchBottomWrapper .resultsPage {
-  padding: 0 3rem;
+.search .resultsPage {
+  margin-top: 11rem;
   transition: 0.5s;
-  overflow-y: hidden;
+  overflow-y: auto;
   height: 100%;
 }
-.search .searchBottomWrapper .resultsPage .searchResults {
+.search .resultsPage .searchResults {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 1rem;
@@ -150,18 +162,18 @@
   justify-content: center;
   padding: 2rem 0 0 0;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard {
+.search .resultsPage .searchResults .resultsCard {
   flex: 20%;
   border-radius: 1rem;
   position: relative;
   cursor: default;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage {
   height: 10rem;
   border-radius: 1rem;
   position: relative;
@@ -172,15 +184,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover button {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover button {
   background-color: #f2d3ac;
   color: black;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover .resultsCardOverlay {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover .resultsCardOverlay {
   transition: 0.2s;
   background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage button {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage button {
   position: absolute;
   width: 7.5rem;
   padding: 0.5rem 1rem;
@@ -192,11 +204,11 @@
   transition: 0.75s;
   cursor: pointer;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover {
   background-color: #56bf7b;
   color: black;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay {
   width: 100%;
   height: 100%;
   display: flex;
@@ -206,26 +218,26 @@
   background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.5176470588));
   transition: 0.2s;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv,
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv,
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv {
   display: flex;
   gap: 0.25rem;
   padding: 0.5rem;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv .icon,
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv .icon {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv .icon,
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv .icon {
   stroke-width: 0.07rem;
   padding: 0.25rem;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv p,
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv p {
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv p,
+.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv p {
   font-weight: 600;
   font-size: 1.2rem;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard h3 {
+.search .resultsPage .searchResults .resultsCard h3 {
   font-size: 1.5rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -234,72 +246,41 @@
   padding-top: 0.25rem;
   cursor: pointer;
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard:hover .resultsImageContainer .resultsCardBgImage button {
+.search .resultsPage .searchResults .resultsCard:hover .resultsImageContainer .resultsCardBgImage button {
   background-color: #73bf86;
   color: rgba(0, 0, 0, 0.543);
 }
-.search .searchBottomWrapper .resultsPage .searchResults .resultsCard:hover .resultsImageContainer .resultsCardBgImage .resultsCardOverlay {
+.search .resultsPage .searchResults .resultsCard:hover .resultsImageContainer .resultsCardBgImage .resultsCardOverlay {
   transition: 0.2s;
   background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper {
+.search .filter {
   background-color: white;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
-  overflow-y: hidden;
-}
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper {
-  height: 100%;
+  margin-top: 12rem;
+  padding-bottom: 3rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
-  overflow-y: hidden;
-}
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterHeader {
-  padding: 1rem 3rem 1rem 3rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterHeader h2 {
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: #73bf86;
-  vertical-align: middle;
-}
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterHeader .iconDiv {
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: transparent;
-  transition: 0.2s;
-  cursor: pointer;
+  z-index: 1;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterHeader .iconDiv .filterHeaderIcon {
-  height: 2.5rem;
-  width: 2.5rem;
-  color: #73bf86;
-}
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterHeader .iconDiv:hover {
-  background-color: white;
-}
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer {
-  z-index: 999;
+.search .filter .filterContainer {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 3rem 3rem;
   gap: 2rem;
+  overflow-x: hidden;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer h3 {
+.search .filter .filterContainer h3 {
   font-size: 1.5rem;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer .filterBoxContainer {
+.search .filter .filterContainer .filterBoxContainer {
   flex: 30%;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer .filterBoxContainer .filterBox {
+.search .filter .filterContainer .filterBoxContainer .filterBox {
   background-color: transparent;
   border: 3px solid #73bf86;
   border-radius: 0.5rem;
@@ -308,7 +289,7 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer .filterBoxContainer .filterBox .filterBoxItem {
+.search .filter .filterContainer .filterBoxContainer .filterBox .filterBoxItem {
   padding: 0.5rem 1rem;
   font-weight: 600;
   background-color: transparent;
@@ -316,11 +297,11 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer .filterBoxContainer .filterBox .filterBoxItem:hover {
+.search .filter .filterContainer .filterBoxContainer .filterBox .filterBoxItem:hover {
   border: 2px solid #56bf7b;
   background-color: rgba(160, 217, 190, 0.6196078431);
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer .filterBoxContainer .filterBox .filterBoxItemSelected {
+.search .filter .filterContainer .filterBoxContainer .filterBox .filterBoxItemSelected {
   padding: 0.5rem 1rem;
   font-weight: 600;
   background-color: #a0d9be;
@@ -328,7 +309,74 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
-.search .searchBottomWrapper .fitlerAnimationWrapper .filterWrapper .filterContainer .filterBoxContainer .filterBox .filterBoxItemSelected:hover {
+.search .filter .filterContainer .filterBoxContainer .filterBox .filterBoxItemSelected:hover {
   border: 2px solid #56bf7b;
   background-color: rgba(160, 217, 190, 0.6196078431);
+}
+
+@media screen and (max-width: 950px) {
+  .search {
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .search .stickyWrapper {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .search .stickyWrapper .searchOptionInputs {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    height: auto;
+    width: 90%;
+  }
+  .search .stickyWrapper .searchOptionInputs .searchBarForm {
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    height: auto;
+    width: 100%;
+  }
+  .search .stickyWrapper .searchOptionInputs .searchBarForm .searchInput {
+    width: calc(100% - 0.5rem - 8px);
+    height: 3rem;
+    padding: 0.25rem;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .search .stickyWrapper .searchOptionInputs .searchBarForm button {
+    position: relative;
+    min-width: 100%;
+    right: 0;
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+  }
+  .search .stickyWrapper .searchOptionInputs .filterIconDiv {
+    width: 40%;
+  }
+  .search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv {
+    width: 40%;
+  }
+  .search .stickyWrapper .searchHistory {
+    margin: 0 1rem;
+    width: 90%;
+  }
+  .search .stickyWrapper .searchHistory .historyItems {
+    overflow-x: auto;
+  }
+  .search .resultsPage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .search .resultsPage .searchResults {
+    width: 90%;
+    padding: 0;
+    align-items: center;
+  }
 }/*# sourceMappingURL=search.module.css.map */

@@ -13,58 +13,28 @@ export const FilterContainer = ({
   dishLabelsCheck,
   dietLabelsCheck,
   mealLabelsCheck,
-  searchTopHeight,
+  searchBarHeight,
 }) => {
   const { showFilter, setShowFilter } = useContext(searchContext);
 
-  const filterContainer = useRef(0);
-
-  const springStyles = useSpring({
-    to: { top: searchTopHeight },
-    from: {
-      top: -filterContainer.current.scrollHeight,
-    },
-    reverse: showFilter,
-    config: {
-      tension: 400,
-      friction: 75,
-    },
-  });
-
   return (
-    <animated.div
-      style={springStyles}
-      className={styles.fitlerAnimationWrapper}
-      ref={filterContainer}
-    >
-      <div className={styles.filterWrapper}>
-        <div className={styles.filterHeader}>
-          <h2>Search Filter</h2>
-          <div
-            className={styles.iconDiv}
-            onClick={() => setShowFilter(!showFilter)}
-          >
-            <BsFilterLeft className={styles.filterHeaderIcon} />
-          </div>
-        </div>
-
-        <div className={styles.filterContainer}>
-          {searchCategories.map((filterBoxData, index) => {
-            return (
-              <FilterBox
-                filterBoxData={filterBoxData}
-                key={index}
-                handleBoxItemClick={handleBoxItemClick}
-                healthLabelsCheck={healthLabelsCheck}
-                cuisineLabelsCheck={cuisineLabelsCheck}
-                dishLabelsCheck={dishLabelsCheck}
-                dietLabelsCheck={dietLabelsCheck}
-                mealLabelsCheck={mealLabelsCheck}
-              />
-            );
-          })}
-        </div>
+    <div className={styles.filter} styles={{ top: searchBarHeight }}>
+      <div className={styles.filterContainer}>
+        {searchCategories.map((filterBoxData, index) => {
+          return (
+            <FilterBox
+              filterBoxData={filterBoxData}
+              key={index}
+              handleBoxItemClick={handleBoxItemClick}
+              healthLabelsCheck={healthLabelsCheck}
+              cuisineLabelsCheck={cuisineLabelsCheck}
+              dishLabelsCheck={dishLabelsCheck}
+              dietLabelsCheck={dietLabelsCheck}
+              mealLabelsCheck={mealLabelsCheck}
+            />
+          );
+        })}
       </div>
-    </animated.div>
+    </div>
   );
 };

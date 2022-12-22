@@ -7,9 +7,10 @@
 
 .navbar {
   height: 4rem;
-  width: 100%;
   position: fixed;
   top: 0;
+  width: calc(100% - 6rem);
+  padding: 0 3rem;
   transition: 0.25s;
   z-index: 9999;
   background-color: white;
@@ -86,7 +87,8 @@
 
 .scrollingNavbar {
   height: 4rem;
-  width: 100%;
+  width: calc(100% - 6rem);
+  padding: 0 3rem;
   position: fixed;
   top: 0;
   transition: 0.25s;
@@ -170,10 +172,12 @@
   height: 5rem;
   width: calc(100vw - 4rem);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: -webkit-sticky;
   position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 .mobileNavbar img {
   width: 3rem;
