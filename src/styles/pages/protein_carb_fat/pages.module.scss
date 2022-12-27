@@ -5,33 +5,35 @@ $color-secondary-green: #a0d9be;
 $color-primary-hover: #56bf7b;
 
 .pageFeed {
-  padding-top: 4rem;
+  padding: 4rem;
   display: flex;
   width: 100%;
+  max-width: 1500px;
   flex-direction: column;
   position: relative;
 
   .header {
+    width: 100%;
     position: fixed;
     margin-top: 0rem;
     display: flex;
     align-items: center;
-    column-gap: 3rem;
-    width: 100%;
     overflow: hidden;
     height: 6rem;
     background-color: white;
     z-index: 99;
 
-    h1 {
+    h2 {
       font-size: 2rem;
-      padding: 0 0 0 2rem;
+      padding-right: 2rem;
     }
+
     .cardViewFilter {
+      padding: 1rem 0;
       height: 100;
       display: flex;
-      gap: 1rem;
       align-items: center;
+      gap: 1rem;
       overflow-x: auto;
 
       .filterIcon {
@@ -40,10 +42,10 @@ $color-primary-hover: #56bf7b;
       }
 
       .cardFilterLabel {
-        border-radius: 0.5rem;
+        border: 1px solid $color-primary;
+        border-radius: 0.25rem;
         padding: 0.25rem 0.5rem;
         cursor: pointer;
-        border: 2px solid transparent;
         transition: 0.2s;
 
         p {
@@ -51,7 +53,35 @@ $color-primary-hover: #56bf7b;
         }
 
         &:hover {
-          background-color: $color-secondary-white;
+          background-color: $color-secondary-tan;
+        }
+      }
+
+      .selectedCardFilterLabel {
+        position: relative;
+        border: 1px solid $color-primary;
+        background-color: $color-secondary-tan;
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        transition: 0.2s;
+
+        p {
+          font-weight: 600;
+        }
+
+        .closeIcon {
+          z-index: 99;
+          position: absolute;
+          top: -0.5rem;
+          right: -0.5rem;
+        }
+
+        &:hover {
+          .closeIcon {
+            width: 1.1rem;
+            height: 1.1rem;
+          }
         }
       }
     }
@@ -74,127 +104,95 @@ $color-primary-hover: #56bf7b;
     }
   }
 
-  h2 {
-    font-size: 2rem;
-    padding: 2rem 3rem;
-  }
-
   .feedCards {
     margin-top: 8rem;
     display: flex;
     flex-wrap: wrap;
-    width: auto;
-    padding: 1rem 3rem 0 3rem;
-    column-gap: 1rem;
-    row-gap: 2rem;
-    .wrappingFeedCard {
-      width: calc((100% - 75%) - 1rem);
-      border-radius: 1rem;
+    justify-content: space-between;
+    max-width: 1500px;
+    gap: 3rem 2rem;
+
+    .recipeCard {
+      width: 15rem;
+      border-radius: 0.75rem;
+      background-color: $color-secondary-tan;
+      height: auto;
+      display: flex;
+      flex-direction: column;
       position: relative;
-      cursor: default;
 
-      .feedImageContainer {
-        height: fit-content;
+      .saveIconDiv {
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
 
-        .feedCardBgImage {
-          height: 10rem;
-          border-radius: 1rem;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          background-repeat: no-repeat;
-          background-size: cover;
+        .deleteRecipeIcon {
+          width: 1.75rem;
+          height: 1.75rem;
+          color: $color-primary;
+        }
 
-          &:hover {
-            button {
-              background-color: $color-secondary-tan;
-              color: black;
-            }
-
-            .feedCardOverlay {
-              transition: 0.2s;
-              background-image: linear-gradient(
-                to bottom,
-                #f5f5f500,
-                #f5f5f5c7
-              );
-            }
-          }
-
-          button {
-            position: absolute;
-            width: 7.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            border: none;
-            background-color: transparent;
-            color: transparent;
-            font-weight: 600;
-            transition: 0.75s;
-            cursor: pointer;
-          }
-          &:hover {
-            background-color: $color-primary-hover;
-            color: black;
-          }
-
-          .feedCardOverlay {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            border-radius: 1rem;
-            background-image: linear-gradient(to bottom, #f5f5f500, #f5f5f584);
-            transition: 0.2s;
-
-            .ingredientDiv,
-            .timeDiv {
-              display: flex;
-              align-items: center;
-              gap: 0.25rem;
-              padding: 0.5rem;
-
-              .icon {
-                stroke-width: 0.07rem;
-                padding: 0.25rem;
-                width: max-content;
-              }
-
-              p {
-                font-weight: 600;
-                font-size: 1rem;
-              }
-            }
+        .saveRecipeIcon {
+          width: 1.75rem;
+          height: 1.75rem;
+          color: $color-primary;
+        }
+        &:hover {
+          background-color: #58bf722b;
+          .iconInitial {
+            color: $color-primary-hover;
           }
         }
       }
 
-      h3 {
-        font-size: 1.3rem;
-        width: fit-content;
-        max-width: 90%;
-        padding-top: 0.25rem;
-        cursor: pointer;
+      .cardImageDiv {
+        width: 100%;
+        height: 10rem;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          background-color: $color-primary;
+          border: 1px solid transparent;
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          transition: 0.2s;
+          display: none;
+
+          &:hover {
+            background-color: $color-primary-hover;
+            padding: 0.55rem 1.05rem;
+          }
+        }
+      }
+
+      .recipeInfoContainer {
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .titleDiv {
+        padding: 0.5rem 0.5rem 1rem 0.5rem;
+
+        h3 {
+          font-size: 1.25rem;
+          cursor: pointer;
+        }
       }
       &:hover {
-        .feedImageContainer {
-          .feedCardBgImage {
-            button {
-              background-color: $color-primary;
-              color: rgba(0, 0, 0, 0.543);
-            }
-
-            .feedCardOverlay {
-              transition: 0.2s;
-              background-image: linear-gradient(
-                to bottom,
-                #f5f5f500,
-                #f5f5f5c7
-              );
-            }
+        .cardImageDiv {
+          button {
+            transition: 0.2s;
+            display: block;
           }
         }
       }

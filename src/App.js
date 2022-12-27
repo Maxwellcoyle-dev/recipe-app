@@ -19,7 +19,9 @@ const queryClient = new QueryClient();
 
 function App() {
   // appContext
+  const [homeRecipes, setHomeRecipes] = useState(null);
   const [searchResultsNextPageUrl, setSearchResultsNextPageUrl] = useState("");
+  const [homeNextPageUrl, setHomeNextPageUrl] = useState("");
   const [proteinNextPageUrl, setProteinNextPageUrl] = useState("");
   const [lowFatNextPageUrl, setLowFatNextPageUrl] = useState("");
   const [lowCarbNextPageUrl, setLowCarbNextPageUrl] = useState("");
@@ -53,6 +55,10 @@ function App() {
   return (
     <appContext.Provider
       value={{
+        homeRecipes,
+        setHomeRecipes,
+        homeNextPageUrl,
+        setHomeNextPageUrl,
         searchResultsNextPageUrl,
         setSearchResultsNextPageUrl,
         proteinNextPageUrl,

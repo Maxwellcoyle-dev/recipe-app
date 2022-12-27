@@ -11,20 +11,6 @@ import { RecipeView } from "../components/recipeView/RecipeView";
 import error from "../images/error.svg";
 import { SpinnerCircular } from "spinners-react";
 
-const colors = [
-  { color: "limeGreen", hex: "#32cd32" },
-  { color: "orange-red", hex: "#ff4500" },
-  { color: "green", hex: "#008000" },
-  { color: "blue", hex: "#0000ff" },
-  { color: "darkOliveGreen", hex: "#556b2f" },
-  { color: "darkBlue", hex: "#00008b" },
-  { color: "orange", hex: "#ffa500" },
-  { color: "purple", hex: "#800080" },
-  { color: "pink", hex: "#ffc0cb" },
-  { color: "gray", hex: "#808080" },
-  { color: "red", hex: "#ff0000" },
-];
-
 export const HighProtein = () => {
   const [labels, setLabels] = useState([]);
   const [labelIndex, setLabelIndex] = useState(null);
@@ -107,12 +93,12 @@ export const HighProtein = () => {
   const success = (
     <div className={styles.pageFeed}>
       <div className={styles.header}>
+        <div></div>
         <h2>High Protein Recipes</h2>
         <Filter
           recipes={proteinPageRecipes}
           labels={labels}
           setLabels={setLabels}
-          colors={colors}
           labelIndex={labelIndex}
           setLabelIndex={setLabelIndex}
         />

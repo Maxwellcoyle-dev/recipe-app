@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import styles from "../../../styles/pages/protein_carb_fat/pages.module.css";
 import { FilterLabel } from "./FilterLabel";
-import { IoFilter } from "react-icons/io5";
+import { AiOutlineFilter } from "react-icons/ai";
 
 export const Filter = ({
   recipes,
   labels,
-  colors,
   setLabels,
   labelIndex,
   setLabelIndex,
@@ -32,13 +31,12 @@ export const Filter = ({
 
   return (
     <div className={styles.cardViewFilter}>
-      <IoFilter className={styles.filterIcon} />
+      <AiOutlineFilter className={styles.filterIcon} />
       {labels?.map((label, index) => {
         return (
           <FilterLabel
             label={label}
             key={index}
-            color={colors[index]}
             id={index}
             labelIndex={labelIndex}
             setLabelIndex={setLabelIndex}

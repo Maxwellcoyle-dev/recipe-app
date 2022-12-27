@@ -38,14 +38,12 @@ export const SearchResults = ({
   return (
     searchResults.length > 0 && (
       <div
-        className={styles.resultsPage}
+        className={styles.searchResults}
         style={{ marginTop: searchTopHeight }}
       >
-        <div className={styles.searchResults}>
-          {searchResults?.map((hit, index) => {
-            return <ResultsFeedCard recipe={hit.recipe} key={index} />;
-          })}
-        </div>
+        {searchResults?.map((hit, index) => {
+          return <ResultsFeedCard recipe={hit.recipe} key={index} />;
+        })}
       </div>
     )
   );

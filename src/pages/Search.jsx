@@ -10,7 +10,6 @@ import { RecipeView } from "../components/recipeView/RecipeView";
 import { NextPage } from "../components/protein_carb_fat/NextPage";
 import { useGetNextPageSearchResults } from "../hooks/useGetNextPageSearchResults";
 import { appContext } from "../context/appContext";
-import { VscHistory } from "react-icons/vsc";
 import { BsFilterLeft } from "react-icons/bs";
 
 export const Search = () => {
@@ -168,21 +167,8 @@ export const Search = () => {
           >
             <BsFilterLeft className={styles.filterIcon} />
           </div>
-          <div
-            className={styles.searchHistoryIconDiv}
-            onClick={() => setShowSearchHistory(!showSearchHistory)}
-            style={{
-              pointerEvents: searchHistory.length < 1 && "none",
-              borderColor: showSearchHistory && "#73bf86",
-            }}
-          >
-            <VscHistory
-              className={styles.searchHistoryIcon}
-              style={{ color: searchHistory.length < 1 && "gray" }}
-            />
-          </div>
         </div>
-        {showSearchHistory && <SearchHistory />}
+        <SearchHistory />
       </div>
 
       {!showFilter && (

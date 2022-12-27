@@ -15,15 +15,18 @@ $color-primary-hover: #56bf7b;
   height: 4rem;
   position: fixed;
   top: 0;
-  width: calc(100% - 6rem);
-  padding: 0 3rem;
+  width: 100%;
   transition: 0.25s;
   z-index: 9999;
   background-color: white;
+  display: flex;
+  justify-content: center;
 
   .navItemContainer {
+    width: 100%;
+    max-width: 1500px;
     height: 100%;
-    padding: 0 2rem;
+    padding: 0 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,18 +103,22 @@ $color-primary-hover: #56bf7b;
 
 .scrollingNavbar {
   height: 4rem;
-  width: calc(100% - 6rem);
-  padding: 0 3rem;
   position: fixed;
   top: 0;
+  width: 100%;
   transition: 0.25s;
   z-index: 9999;
+  background-color: white;
+  display: flex;
+  justify-content: center;
   background-color: $color-secondary-white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
   .navItemContainer {
+    width: 100%;
+    max-width: 1500px;
     height: 100%;
-    padding: 0 2rem;
+    padding: 0 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -188,9 +195,9 @@ $color-primary-hover: #56bf7b;
 
 .mobileNavbar {
   background-color: $color-secondary-white;
-  padding: 0 2rem;
+  padding: 0 1rem;
   height: 5rem;
-  width: calc(100vw - 4rem);
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;

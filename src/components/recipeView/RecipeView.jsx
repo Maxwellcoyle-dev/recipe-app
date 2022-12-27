@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import styles from "../../styles/recipeView/recipeView.module.css";
 import { useScrollLock } from "../../hooks/useScrollLock";
 import { AiOutlineClose } from "react-icons/ai";
-import { SaveIcon } from "../SaveIcon";
+import { SaveIcon } from "../home/SaveIcon";
 import { appContext } from "../../context/appContext";
 import { searchContext } from "../../context/searchContext";
 
@@ -12,12 +12,14 @@ export const RecipeView = () => {
   const { setShowRecipeView, recipeItem } = useContext(appContext);
 
   useEffect(() => {
+    console.log(recipeItem);
+
     lockScroll();
 
     return () => {
       unlockScroll();
     };
-  });
+  }, []);
 
   let found = savedRecipes?.some(
     (item) => item?.recipe?.label === recipeItem?.label
@@ -66,6 +68,10 @@ export const RecipeView = () => {
           <div className={styles.imgDiv}>
             <img alt={recipeItem?.label} src={recipeItem?.image} />
           </div>
+        </div>
+        <div className={styles.notesDiv}>
+          <h3>Notes</h3>
+          <p></p>
         </div>
         <div className={styles.primaryInfoRow}>
           <div className={styles.overviewDiv}>

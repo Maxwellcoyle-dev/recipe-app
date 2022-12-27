@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import styles from "../../styles/pages/myRecipes/myRecipes.module.css";
+import styles from "../../styles/pages/home/home.module.css";
 import { searchContext } from "../../context/searchContext";
 import { appContext } from "../../context/appContext";
-import { SaveRecipeIcon } from "./IconComponents/SaveRecipeIcon";
-import { RecipeNoteIcon } from "./IconComponents/RecipeNoteIcon";
+import { SaveIcon } from "./SaveIcon";
 import { BsClockHistory, BsCardChecklist } from "react-icons/bs";
 
-export const RecipeCard = ({ recipe, id, showNoteBox, note }) => {
+export const RecipeCard = ({ recipe }) => {
   const { setShowRecipeView, setRecipeItem } = useContext(appContext);
   const { savedRecipes } = useContext(searchContext);
 
@@ -18,11 +17,8 @@ export const RecipeCard = ({ recipe, id, showNoteBox, note }) => {
   };
 
   return (
-    <div className={styles.myRecipesCard}>
-      <div className={styles.cardIconContainer}>
-        <RecipeNoteIcon id={id} showNoteBox={showNoteBox} note={note} />
-        <SaveRecipeIcon recipe={recipe} label={recipe.label} found={found} />
-      </div>
+    <div className={styles.recipeCard}>
+      <SaveIcon recipe={recipe} label={recipe.label} found={found} />
 
       <div
         className={styles.cardImageDiv}
@@ -45,8 +41,8 @@ export const RecipeCard = ({ recipe, id, showNoteBox, note }) => {
           <p>{recipe?.ingredientLines?.length} Ingredients</p>
         </div>
       </div>
-      <div onClick={handleShowRecipeClick} className={styles.titleDiv}>
-        <h3>{recipe?.label}</h3>
+      <div className={styles.titleDiv}>
+        <h3 onClick={handleShowRecipeClick}>{recipe?.label}</h3>
       </div>
     </div>
   );

@@ -1,19 +1,17 @@
 import React, { useContext } from "react";
 import styles from "../styles/pages/home/home.module.css";
-import { HomeFeed } from "../components/home/homeFeed/HomeFeed";
-import { HeroContainer } from "../components/home/hero/HeroContainer";
+import { HomeFeed } from "../components/home/HomeFeed";
 import { RecipeView } from "../components/recipeView/RecipeView";
 import { appContext } from "../context/appContext";
+import { HeroSection } from "../components/home/HeroSection";
 
-export const Home = ({ pageRef }) => {
-  const { showRecipeView } = useContext(appContext);
+export const Home = () => {
+  const { showRecipeView, recipeItem } = useContext(appContext);
 
   return (
-    <div className={styles.home} ref={pageRef}>
-      <div className={styles.homeContent}>
-        <HeroContainer />
-        <HomeFeed />
-      </div>
+    <div className={styles.home}>
+      <HeroSection />
+      <HomeFeed />
       {showRecipeView && <RecipeView />}
     </div>
   );

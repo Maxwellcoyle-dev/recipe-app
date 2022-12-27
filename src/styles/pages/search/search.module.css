@@ -1,31 +1,32 @@
 .search {
   background-color: white;
-  width: calc(100% - 6rem);
+  width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-top: 4rem;
   overflow: hidden;
   position: relative;
-  padding: 0 3rem;
   cursor: default;
 }
 .search .stickyWrapper {
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
-  padding: 2rem 0;
+  padding: 2rem 4rem;
   background-color: white;
   z-index: 99;
 }
 .search .stickyWrapper .searchOptionInputs {
   display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
   width: 100%;
   height: 4rem;
 }
@@ -37,11 +38,11 @@
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
   height: 100%;
-  width: 80%;
+  width: 100%;
 }
 .search .stickyWrapper .searchOptionInputs .searchBarForm .searchInput {
   width: 100%;
-  height: calc(100% - 8px);
+  height: 100%;
   padding: 0 0 0 1rem;
   margin: 0;
   border: 4px solid #73bf86;
@@ -135,7 +136,17 @@
   row-gap: 0.5rem;
   z-index: 2;
 }
-.search .stickyWrapper .searchHistory p {
+.search .stickyWrapper .searchHistory .header {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.search .stickyWrapper .searchHistory .header .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.search .stickyWrapper .searchHistory .header p {
   font-size: 1.3rem;
   cursor: pointer;
 }
@@ -148,120 +159,127 @@
   font-size: 1.2rem;
   cursor: pointer;
 }
-.search .resultsPage {
+.search .searchResults {
+  margin: auto;
+  width: 100%;
+  max-width: 1499px;
   margin-top: 11rem;
   transition: 0.5s;
   overflow-y: auto;
-  height: 100%;
-}
-.search .resultsPage .searchResults {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 1rem;
   align-items: flex-start;
-  justify-content: center;
-  padding: 2rem 0 0 0;
+  justify-content: space-between;
+  padding: 2rem 4rem;
 }
-.search .resultsPage .searchResults .resultsCard {
-  flex: 20%;
-  border-radius: 1rem;
+.search .searchResults .recipeCard {
+  width: 15rem;
+  border-radius: 0.75rem;
+  background-color: #f2d3ac;
+  height: auto;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  cursor: default;
 }
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage {
-  height: 10rem;
-  border-radius: 1rem;
-  position: relative;
+.search .searchResults .recipeCard .saveIconDiv {
+  margin: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover button {
-  background-color: #f2d3ac;
-  color: black;
-}
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover .resultsCardOverlay {
-  transition: 0.2s;
-  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
-}
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage button {
-  position: absolute;
-  width: 7.5rem;
-  padding: 0.5rem 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 0.5rem;
-  border: none;
-  background-color: transparent;
-  color: transparent;
-  font-weight: 600;
-  transition: 0.75s;
   cursor: pointer;
 }
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage:hover {
-  background-color: #56bf7b;
-  color: black;
+.search .searchResults .recipeCard .saveIconDiv .deleteRecipeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #73bf86;
 }
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay {
+.search .searchResults .recipeCard .saveIconDiv .saveRecipeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #73bf86;
+}
+.search .searchResults .recipeCard .saveIconDiv:hover {
+  background-color: rgba(88, 191, 114, 0.168627451);
+}
+.search .searchResults .recipeCard .saveIconDiv:hover .iconInitial {
+  color: #56bf7b;
+}
+.search .searchResults .recipeCard .saveIconDiv {
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.search .searchResults .recipeCard .saveIconDiv .deleteRecipeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.search .searchResults .recipeCard .saveIconDiv .saveRecipeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #73bf86;
+}
+.search .searchResults .recipeCard .saveIconDiv:hover {
+  background-color: rgba(88, 191, 114, 0.168627451);
+}
+.search .searchResults .recipeCard .saveIconDiv:hover .iconInitial {
+  color: #56bf7b;
+}
+.search .searchResults .recipeCard .cardImageDiv {
   width: 100%;
-  height: 100%;
+  height: 10rem;
+  background-position: center;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  border-radius: 1rem;
-  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.5176470588));
+  align-items: center;
+  justify-content: center;
+}
+.search .searchResults .recipeCard .cardImageDiv button {
+  background-color: #73bf86;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
   transition: 0.2s;
+  display: none;
 }
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv,
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv {
-  display: flex;
-  gap: 0.25rem;
+.search .searchResults .recipeCard .cardImageDiv button:hover {
+  background-color: #56bf7b;
+  padding: 0.55rem 1.05rem;
+}
+.search .searchResults .recipeCard .recipeInfoContainer {
+  width: calc(100% - 1rem);
   padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
 }
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv .icon,
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv .icon {
-  stroke-width: 0.07rem;
-  padding: 0.25rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.search .searchResults .recipeCard .titleDiv {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
 }
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .ingredientDiv p,
-.search .resultsPage .searchResults .resultsCard .resultsImageContainer .resultsCardBgImage .resultsCardOverlay .timeDiv p {
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-.search .resultsPage .searchResults .resultsCard h3 {
-  font-size: 1.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: 85%;
-  padding-top: 0.25rem;
+.search .searchResults .recipeCard .titleDiv h3 {
+  font-size: 1.25rem;
   cursor: pointer;
 }
-.search .resultsPage .searchResults .resultsCard:hover .resultsImageContainer .resultsCardBgImage button {
-  background-color: #73bf86;
-  color: rgba(0, 0, 0, 0.543);
-}
-.search .resultsPage .searchResults .resultsCard:hover .resultsImageContainer .resultsCardBgImage .resultsCardOverlay {
+.search .searchResults .recipeCard:hover .cardImageDiv button {
   transition: 0.2s;
-  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
+  display: block;
 }
 .search .filter {
   background-color: white;
-  margin-top: 12rem;
-  padding-bottom: 3rem;
+  margin-top: 9rem;
+  padding: 4rem;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 100%;
+  max-width: 1500px;
   overflow-x: hidden;
   display: flex;
   align-items: center;
@@ -324,6 +342,7 @@
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    padding: 2rem 1rem;
   }
   .search .stickyWrapper .searchOptionInputs {
     flex-wrap: wrap;
@@ -331,7 +350,7 @@
     align-items: center;
     row-gap: 0.5rem;
     height: auto;
-    width: 90%;
+    width: 100%;
   }
   .search .stickyWrapper .searchOptionInputs .searchBarForm {
     justify-content: space-between;
@@ -341,7 +360,7 @@
     width: 100%;
   }
   .search .stickyWrapper .searchOptionInputs .searchBarForm .searchInput {
-    width: calc(100% - 0.5rem - 8px);
+    width: 100%;
     height: 3rem;
     padding: 0.25rem;
     margin: 0;
@@ -356,10 +375,9 @@
     margin: 0;
   }
   .search .stickyWrapper .searchOptionInputs .filterIconDiv {
-    width: 40%;
-  }
-  .search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv {
-    width: 40%;
+    width: 100%;
+    height: 3rem;
+    justify-self: flex-start;
   }
   .search .stickyWrapper .searchHistory {
     margin: 0 1rem;
@@ -368,15 +386,17 @@
   .search .stickyWrapper .searchHistory .historyItems {
     overflow-x: auto;
   }
-  .search .resultsPage {
+  .search .searchResults {
+    margin-top: 20rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .search .resultsPage .searchResults {
-    width: 90%;
     padding: 0;
     align-items: center;
+  }
+  .search .filter {
+    margin-top: 12rem;
+    padding: 4rem 1rem;
   }
 }/*# sourceMappingURL=search.module.css.map */

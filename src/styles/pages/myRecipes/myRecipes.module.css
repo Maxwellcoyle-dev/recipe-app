@@ -238,7 +238,7 @@
 .myRecipesPage .pageContent .leftPanel {
   width: 30%;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .myRecipesPage .pageContent .leftPanel .directoryPanel {
   display: flex;
@@ -310,11 +310,12 @@
   padding: 0 1rem;
 }
 .myRecipesPage .pageContent .rightPanel .cardViewPanel {
-  overflow-y: scroll;
+  overflow-y: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 1rem;
+  padding-bottom: 2rem;
 }
 .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard {
   width: calc(34% - 2rem);
@@ -434,6 +435,7 @@
 }
 .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard .titleDiv h3 {
   font-size: 1.3rem;
+  cursor: pointer;
 }
 .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard:hover button {
   background-color: #689c7b;
@@ -442,7 +444,7 @@
 
 .addRecipesContainer {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 5rem);
   display: flex;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -453,7 +455,7 @@
   width: 30%;
 }
 .addRecipesContainer p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 950px) {
@@ -496,5 +498,19 @@
   }
   .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard {
     width: 100%;
+  }
+  .addRecipesContainer {
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .addRecipesContainer img {
+    width: 80%;
+  }
+  .addRecipesContainer p {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }/*# sourceMappingURL=myRecipes.module.css.map */

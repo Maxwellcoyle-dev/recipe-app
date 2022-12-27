@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineStar } from "react-icons/ai";
+import { BiHomeAlt } from "react-icons/bi";
 
 export const Navbar = () => {
   const [mobileView, setMobileView] = useState(false);
@@ -162,8 +163,8 @@ export const Navbar = () => {
 
   const mobileNav = (
     <nav className={styles.mobileNavbar}>
-      <Link to="/">
-        <img src={logo} />
+      <Link to="/" className={styles.iconBox}>
+        <BiHomeAlt className={styles.icon} />
       </Link>
       <Link to="/my-recipes" className={styles.iconBox}>
         <AiOutlineStar className={styles.icon} />

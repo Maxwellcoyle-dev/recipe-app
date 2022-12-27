@@ -27,7 +27,7 @@ $color-primary-hover: #56bf7b;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     .headerRow {
       display: flex;

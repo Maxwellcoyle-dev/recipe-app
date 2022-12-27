@@ -6,31 +6,32 @@ $color-primary-hover: #56bf7b;
 
 .search {
   background-color: white;
-  width: calc(100% - 6rem);
+  width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-top: 4rem;
   overflow: hidden;
   position: relative;
-  padding: 0 3rem;
   cursor: default;
 
   .stickyWrapper {
+    position: fixed;
+    top: 4rem;
+    width: 100%;
+    max-width: 1500px;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-    padding: 2rem 0;
+    padding: 2rem 4rem;
     background-color: white;
     z-index: 99;
 
     .searchOptionInputs {
       display: flex;
-      column-gap: 0.5rem;
+      column-gap: 1rem;
       width: 100%;
       height: 4rem;
 
@@ -41,11 +42,11 @@ $color-primary-hover: #56bf7b;
         justify-content: flex-start;
         column-gap: 0.5rem;
         height: 100%;
-        width: 80%;
+        width: 100%;
 
         .searchInput {
           width: 100%;
-          height: calc(100% - 8px);
+          height: 100%;
           padding: 0 0 0 1rem;
           margin: 0;
           border: 4px solid $color-primary;
@@ -148,9 +149,20 @@ $color-primary-hover: #56bf7b;
       row-gap: 0.5rem;
       z-index: 2;
 
-      p {
-        font-size: 1.3rem;
-        cursor: pointer;
+      .header {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        p {
+          font-size: 1.3rem;
+          cursor: pointer;
+        }
       }
 
       .historyItems {
@@ -165,132 +177,129 @@ $color-primary-hover: #56bf7b;
     }
   }
 
-  .resultsPage {
+  .searchResults {
+    margin: auto;
+    width: 100%;
+    max-width: 1499px;
     margin-top: 11rem;
     transition: 0.5s;
     overflow-y: auto;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem 4rem;
 
-    .searchResults {
+    .recipeCard {
+      width: 15rem;
+      border-radius: 0.75rem;
+      background-color: $color-secondary-tan;
+      height: auto;
       display: flex;
-      flex-wrap: wrap;
-      gap: 2rem 1rem;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 2rem 0 0 0;
+      flex-direction: column;
+      position: relative;
 
-      .resultsCard {
-        flex: 20%;
-        border-radius: 1rem;
-        position: relative;
-        cursor: default;
+      .saveIconDiv {
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
 
-        .resultsImageContainer {
-          height: fit-content;
-
-          .resultsCardBgImage {
-            height: 10rem;
-            border-radius: 1rem;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            &:hover {
-              button {
-                background-color: $color-secondary-tan;
-                color: black;
-              }
-
-              .resultsCardOverlay {
-                transition: 0.2s;
-                background-image: linear-gradient(
-                  to bottom,
-                  #f5f5f500,
-                  #f5f5f5c7
-                );
-              }
-            }
-
-            button {
-              position: absolute;
-              width: 7.5rem;
-              padding: 0.5rem 1rem;
-              border-radius: 0.5rem;
-              border: none;
-              background-color: transparent;
-              color: transparent;
-              font-weight: 600;
-              transition: 0.75s;
-              cursor: pointer;
-            }
-            &:hover {
-              background-color: $color-primary-hover;
-              color: black;
-            }
-
-            .resultsCardOverlay {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              align-items: flex-end;
-              justify-content: space-between;
-              border-radius: 1rem;
-              background-image: linear-gradient(
-                to bottom,
-                #f5f5f500,
-                #f5f5f584
-              );
-              transition: 0.2s;
-
-              .ingredientDiv,
-              .timeDiv {
-                display: flex;
-                gap: 0.25rem;
-                padding: 0.5rem;
-
-                .icon {
-                  stroke-width: 0.07rem;
-                  padding: 0.25rem;
-                  width: max-content;
-                }
-
-                p {
-                  font-weight: 600;
-                  font-size: 1.2rem;
-                }
-              }
-            }
-          }
+        .deleteRecipeIcon {
+          width: 1.75rem;
+          height: 1.75rem;
+          color: $color-primary;
         }
 
-        h3 {
-          font-size: 1.5rem;
-          width: fit-content;
-          max-width: 85%;
-          padding-top: 0.25rem;
-          cursor: pointer;
+        .saveRecipeIcon {
+          width: 1.75rem;
+          height: 1.75rem;
+          color: $color-primary;
         }
         &:hover {
-          .resultsImageContainer {
-            .resultsCardBgImage {
-              button {
-                background-color: $color-primary;
-                color: rgba(0, 0, 0, 0.543);
-              }
+          background-color: #58bf722b;
+          .iconInitial {
+            color: $color-primary-hover;
+          }
+        }
+      }
 
-              .resultsCardOverlay {
-                transition: 0.2s;
-                background-image: linear-gradient(
-                  to bottom,
-                  #f5f5f500,
-                  #f5f5f5c7
-                );
-              }
-            }
+      .saveIconDiv {
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        .deleteRecipeIcon {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+
+        .saveRecipeIcon {
+          width: 1.75rem;
+          height: 1.75rem;
+          color: $color-primary;
+        }
+        &:hover {
+          background-color: #58bf722b;
+          .iconInitial {
+            color: $color-primary-hover;
+          }
+        }
+      }
+
+      .cardImageDiv {
+        width: 100%;
+        height: 10rem;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          background-color: $color-primary;
+          border: 1px solid transparent;
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          transition: 0.2s;
+          display: none;
+
+          &:hover {
+            background-color: $color-primary-hover;
+            padding: 0.55rem 1.05rem;
+          }
+        }
+      }
+
+      .recipeInfoContainer {
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .titleDiv {
+        padding: 0.5rem 0.5rem 1rem 0.5rem;
+
+        h3 {
+          font-size: 1.25rem;
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        .cardImageDiv {
+          button {
+            transition: 0.2s;
+            display: block;
           }
         }
       }
@@ -299,10 +308,11 @@ $color-primary-hover: #56bf7b;
 
   .filter {
     background-color: white;
-    margin-top: 12rem;
-    padding-bottom: 3rem;
+    margin-top: 9rem;
+    padding: 4rem;
     height: max-content;
     width: 100%;
+    max-width: 1500px;
     overflow-x: hidden;
     display: flex;
     align-items: center;
@@ -368,13 +378,14 @@ $color-primary-hover: #56bf7b;
     width: 100%;
     .stickyWrapper {
       height: fit-content;
+      padding: 2rem 1rem;
       .searchOptionInputs {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         row-gap: 0.5rem;
         height: auto;
-        width: 90%;
+        width: 100%;
 
         .searchBarForm {
           justify-content: space-between;
@@ -384,7 +395,7 @@ $color-primary-hover: #56bf7b;
           width: 100%;
 
           .searchInput {
-            width: calc((100% - 0.5rem) - 8px);
+            width: 100%;
             height: 3rem;
             padding: 0.25rem;
             margin: 0;
@@ -402,11 +413,9 @@ $color-primary-hover: #56bf7b;
         }
 
         .filterIconDiv {
-          width: 40%;
-        }
-
-        .searchHistoryIconDiv {
-          width: 40%;
+          width: 100%;
+          height: 3rem;
+          justify-self: flex-start;
         }
       }
       .searchHistory {
@@ -419,16 +428,19 @@ $color-primary-hover: #56bf7b;
       }
     }
 
-    .resultsPage {
+    .searchResults {
+      margin-top: 20rem;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      .searchResults {
-        width: 90%;
-        padding: 0;
-        align-items: center;
-      }
+      padding: 0;
+      align-items: center;
+    }
+
+    .filter {
+      margin-top: 12rem;
+      padding: 4rem 1rem;
     }
   }
 }

@@ -1,117 +1,21 @@
 .home {
+  margin-top: 4rem;
   cursor: default;
   height: 100%;
-}
-.home .homeContent {
-  padding-top: 6rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.home .homeContent .heroContainer {
-  padding: 2rem 0;
-}
-.home .homeContent .heroContainer .sliderComponent {
-  display: flex;
-  justify-content: center;
-  height: auto;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide {
-  width: 90%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv {
-  position: relative;
-  display: flex;
-  flex: 30%;
-  align-items: center;
-  justify-content: center;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv .recipeImage {
-  border-radius: 2rem;
   width: 100%;
-  height: auto;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv button {
-  position: absolute;
-  padding: 0.5rem 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.5rem;
-  background-color: #73bf86;
-  color: #f2f2f2;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv button:hover {
-  background-color: #f2f2f2;
-  border: 1px solid #56bf7b;
-  color: #56bf7b;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv {
-  display: flex;
-  flex: 60%;
-  flex-direction: column;
-  row-gap: 0.5rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv h2 {
-  font-size: 2rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .hLine {
-  width: 5rem;
-  border: 4px solid #73bf86;
-  border-radius: 0.5rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv {
-  padding-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  justify-items: left;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv .heroInfoSection {
-  display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv .heroInfoSection .icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv .heroInfoSection .ingredientsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv .heroInfoSection .ingredientsContainer .ingredientDiv {
-  border-radius: 0.5rem;
-  border: 1px solid #73bf86;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: 0.5rem;
 }
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv .heroInfoSection .ingredientsContainer .seeRecipe {
-  align-self: flex-end;
-  padding-left: 0.5rem;
-  color: #73bf86;
-  cursor: pointer;
-}
-.home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv .rightInfoDiv .heroInfoSection .ingredientsContainer .seeRecipe:hover {
-  color: #56bf7b;
-  text-decoration: underline;
-}
-.home .homeContent .spinnerContainer {
+.home .spinnerContainer {
   min-height: 20rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.home .homeContent .errorContainer {
+.home .errorContainer {
   min-height: 20rem;
   width: 100%;
   display: flex;
@@ -120,171 +24,198 @@
   align-items: center;
   justify-content: center;
 }
-.home .homeContent .errorContainer img {
+.home .errorContainer img {
   width: 15rem;
   height: 15rem;
 }
-.home .homeContent .errorContainer p {
+.home .errorContainer p {
   font-size: 1.2rem;
 }
-.home .homeContent .homeFeed .feedCategory {
-  padding: 1rem 2rem 1rem 2rem;
-  position: relative;
-}
-.home .homeContent .homeFeed .feedCategory .leftTrigger {
-  position: absolute;
-  left: 1rem;
-  top: 7rem;
-  z-index: 99;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
+.home .heroSection {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(115, 191, 134, 0.6745098039);
-  cursor: pointer;
-  transition: 0.2s;
-}
-.home .homeContent .homeFeed .feedCategory .leftTrigger:hover {
-  background-color: #73bf86;
-}
-.home .homeContent .homeFeed .feedCategory .leftTrigger .icon {
-  width: 2rem;
-  height: 2rem;
-  stroke-width: 3rem;
-}
-.home .homeContent .homeFeed .feedCategory .rightTrigger {
-  position: absolute;
-  right: 1rem;
-  top: 7rem;
-  z-index: 99;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(115, 191, 134, 0.6745098039);
-  cursor: pointer;
-  transition: 0.2s;
-}
-.home .homeContent .homeFeed .feedCategory .rightTrigger:hover {
-  background-color: #73bf86;
-}
-.home .homeContent .homeFeed .feedCategory .rightTrigger .icon {
-  width: 2rem;
-  height: 2rem;
-  stroke-width: 3rem;
-}
-.home .homeContent .homeFeed .feedCategory h3 {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar {
-  display: none;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard {
-  min-width: calc(25% - 1rem);
-  border-radius: 1rem;
-  position: relative;
-  cursor: default;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage {
-  height: 10rem;
-  border-radius: 1rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem 4rem;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 1500px;
 }
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover button {
-  background-color: #f2d3ac;
-  color: black;
+.home .heroSection .leftDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.5rem;
+  width: 40%;
+  display: flex;
 }
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover .feedCardOverlay {
-  transition: 0.2s;
-  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
+.home .heroSection .leftDiv h1 {
+  font-size: 2.5rem;
 }
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage button {
-  position: absolute;
-  width: 7.5rem;
+.home .heroSection .leftDiv h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.home .heroSection .leftDiv .buttonDiv {
+  margin-top: 1rem;
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.home .heroSection .leftDiv .buttonDiv button {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  border: none;
-  background-color: transparent;
-  color: transparent;
   font-weight: 600;
-  transition: 0.75s;
   cursor: pointer;
 }
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage:hover {
-  background-color: #56bf7b;
-  color: black;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  border-radius: 1rem;
-  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.5176470588));
-  transition: 0.2s;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv,
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv {
-  display: flex;
-  gap: 0.25rem;
-  padding: 0.5rem;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv .icon,
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv .icon {
-  stroke-width: 0.07rem;
-  padding: 0.25rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .ingredientDiv p,
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard .feedImageContainer .feedCardBgImage .feedCardOverlay .timeDiv p {
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard h3 {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: 90%;
-  padding-top: 0.25rem;
-  cursor: pointer;
-}
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard:hover .feedImageContainer .feedCardBgImage button {
+.home .heroSection .leftDiv .buttonDiv .primaryBtn {
   background-color: #73bf86;
-  color: rgba(0, 0, 0, 0.543);
+  border: 1px solid transparent;
 }
-.home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard:hover .feedImageContainer .feedCardBgImage .feedCardOverlay {
-  transition: 0.2s;
-  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0), rgba(245, 245, 245, 0.7803921569));
-}
-.home .homeContent .homeFeed .feedCategory .percentLine {
-  border: 2px solid #56bf7b;
-  border-radius: 0.5rem;
+.home .heroSection .leftDiv .buttonDiv .primaryBtn:hover {
   background-color: #56bf7b;
+}
+.home .heroSection .leftDiv .buttonDiv .secondaryBtn {
+  background-color: #f2f2f2;
+  border: 1px solid #73bf86;
+}
+.home .heroSection .leftDiv .buttonDiv .secondaryBtn:hover {
+  background-color: #f2d3ac;
+}
+.home .heroSection .rightDiv {
+  width: 60%;
+}
+.home .homeFeed {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+  padding: 2rem 4rem;
+  max-width: 1500px;
+}
+.home .homeFeed .homeFeedHeader {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  align-items: flex-start;
+}
+.home .homeFeed .homeFeedHeader .headerTitleDiv {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.home .homeFeed .homeFeedHeader .headerTitleDiv .icon {
+  width: 3rem;
+  height: 3rem;
+}
+.home .homeFeed .homeFeedHeader .headerTitleDiv h2 {
+  font-size: 1.75rem;
+}
+.home .homeFeed .homeFeedCardContainer {
+  padding: 1rem 0 2rem 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1500px;
+  gap: 3rem 2rem;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard {
+  width: 15rem;
+  border-radius: 0.75rem;
+  background-color: #f2d3ac;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .saveIconDiv {
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .saveIconDiv .deleteRecipeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #73bf86;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .saveIconDiv .saveRecipeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #73bf86;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .saveIconDiv:hover {
+  background-color: rgba(88, 191, 114, 0.168627451);
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .saveIconDiv:hover .iconInitial {
+  color: #56bf7b;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .cardImageDiv {
+  width: 100%;
+  height: 10rem;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .cardImageDiv button {
+  background-color: #73bf86;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  display: none;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .cardImageDiv button:hover {
+  background-color: #56bf7b;
+  padding: 0.55rem 1.05rem;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .recipeInfoContainer {
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .titleDiv {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard .titleDiv h3 {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.home .homeFeed .homeFeedCardContainer .recipeCard:hover .cardImageDiv button {
+  transition: 0.2s;
+  display: block;
+}
+.home .homeFeed .scrollTopDiv {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  background-color: #73bf86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.home .homeFeed .scrollTopDiv .scrollTopIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #f2f2f2;
+}
+.home .homeFeed .scrollTopDiv:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #56bf7b;
+}
+.home .homeFeed .scrollTopDiv:active {
+  box-shadow: none;
 }
 
 .nextPage {
@@ -306,56 +237,43 @@
 }
 
 @media screen and (max-width: 950px) {
-  .home .homeContent {
-    padding-top: 2rem;
+  .home {
+    margin-top: 1rem;
   }
-  .home .homeContent .heroContainer .sliderComponent {
-    padding: 0 2rem;
+  .home .heroSection {
+    padding: 1rem;
+    flex-direction: column;
+    row-gap: 2rem;
   }
-  .home .homeContent .heroContainer .sliderComponent .heroSlide {
-    flex-direction: column-reverse;
+  .home .heroSection .leftDiv {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    row-gap: 1rem;
   }
-  .home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv {
-    width: 70%;
-    padding-bottom: 2rem;
-  }
-  .home .homeContent .heroContainer .sliderComponent .heroSlide .leftDiv .recipeImage {
-    display: none;
-  }
-  .home .homeContent .heroContainer .sliderComponent .heroSlide .rightDiv {
-    justify-content: center;
+  .home .heroSection .leftDiv .buttonDiv {
+    display: block;
+    margin-top: 0;
+    row-gap: 1rem;
+    width: 100%;
+    height: auto;
     align-items: center;
   }
-  .home .homeContent .homeFeed .feedCategory .leftTrigger {
-    display: none;
-    background-color: transparent;
+  .home .heroSection .leftDiv .buttonDiv button {
+    width: 80%;
+    margin: 0.5rem 0;
   }
-  .home .homeContent .homeFeed .feedCategory .leftTrigger .icon {
-    display: none;
+  .home .heroSection .rightDiv {
+    width: 100%;
+    align-items: center;
   }
-  .home .homeContent .homeFeed .feedCategory .rightTrigger {
-    display: none;
-    background-color: transparent;
+  .home .homeFeed {
+    padding: 1rem;
+    width: 100%;
   }
-  .home .homeContent .homeFeed .feedCategory .rightTrigger .icon {
-    display: none;
-  }
-  .home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar {
-    display: block;
-    background-color: gray;
-    border-radius: 0.5rem;
-  }
-  .home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar-thumb {
-    background-color: #73bf86;
-    border-radius: 0.5rem;
-  }
-  .home .homeContent .homeFeed .feedCategory .feedSlider::-webkit-scrollbar-thumb:hover {
-    background-color: #56bf7b;
-  }
-  .home .homeContent .homeFeed .feedCategory .feedSlider .scrollingFeedCard {
-    min-width: 100%;
-  }
-  .home .homeContent .homeFeed .feedCategory .percentLine {
-    display: none;
+  .home .homeFeed .homeFeedCardContainer {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }/*# sourceMappingURL=home.module.css.map */

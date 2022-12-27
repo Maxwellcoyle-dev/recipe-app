@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import styles from "../../styles/pages/search/search.module.css";
 import { searchContext } from "../../context/searchContext";
+import { VscHistory } from "react-icons/vsc";
 
 export const SearchHistory = () => {
   const {
@@ -30,7 +31,10 @@ export const SearchHistory = () => {
   return (
     <div className={styles.searchHistory}>
       {searchHistory.length > 0 && (
-        <p onClick={handleClearHistory}>Clear All</p>
+        <div className={styles.header}>
+          <VscHistory className={styles.icon} />
+          <p onClick={handleClearHistory}>Clear All</p>
+        </div>
       )}
 
       <div className={styles.historyItems}>
