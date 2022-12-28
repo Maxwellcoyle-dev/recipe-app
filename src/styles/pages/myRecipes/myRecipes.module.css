@@ -1,20 +1,25 @@
 .myRecipesPage {
-  height: calc(100vh - 6rem);
-  overflow-y: hidden;
-  margin-top: 6rem;
-  padding: 0 3rem;
+  height: calc(100vh - 4rem);
+  padding: 2rem 2rem 0.5rem 2rem;
+  max-width: 1500px;
+  margin: auto;
+  margin-top: 4rem;
   cursor: default;
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  align-items: center;
+  row-gap: 1rem;
   justify-content: center;
 }
 .myRecipesPage .overlayWrapper {
   z-index: 99;
   position: absolute;
+  left: 0;
+  top: 0;
   height: auto;
   width: 100%;
+  height: 100%;
   background-color: rgba(104, 156, 123, 0.4392156863);
   overflow: hidden;
 }
@@ -29,6 +34,7 @@
 .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox {
   position: relative;
   background-color: #f2f2f2;
+  width: 50%;
   padding: 2rem 0.5rem;
   display: flex;
   flex-direction: column;
@@ -56,11 +62,8 @@
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm input {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  outline: none;
-  border: none;
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .textArea {
+  width: 20rem;
 }
 .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .labelBoxForm .colorPicker {
   display: flex;
@@ -118,14 +121,16 @@
 }
 .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm {
   padding: 0 2.5rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm textarea {
+.myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm textArea {
   padding: 0.5rem;
-  height: 10rem;
-  width: 25rem;
+  height: 12rem;
+  width: 100%;
+  border-radius: 0.25rem;
   border: none;
   outline: none;
   resize: none;
@@ -192,9 +197,23 @@
   flex-direction: column;
   row-gap: 1rem;
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   overflow: hidden;
 }
-.myRecipesPage .header h1 {
+.myRecipesPage .header .headerTitle {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.myRecipesPage .header .headerTitle .icon {
+  width: 2rem;
+  height: 2rem;
+  color: #689c7b;
+}
+.myRecipesPage .header .headerTitle h1 {
   font-size: 2rem;
 }
 .myRecipesPage .header .cardViewFilter {
@@ -203,23 +222,22 @@
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  height: 3.5rem;
 }
 .myRecipesPage .header .cardViewFilter .filterIcon {
   width: 1.5rem;
   height: 1.5rem;
+  color: #689c7b;
 }
 .myRecipesPage .header .cardViewFilter .cardFilterLabel {
-  border-radius: 0.5rem;
+  border: 1px solid #689c7b;
+  border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: 0.2s;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  cursor: pointer;
+  transition: 0.2s;
 }
 .myRecipesPage .header .cardViewFilter .cardFilterLabel p {
   font-weight: 600;
@@ -228,7 +246,30 @@
   width: max-content;
 }
 .myRecipesPage .header .cardViewFilter .cardFilterLabel:hover {
-  background-color: #f2f2f2;
+  background-color: #f2d3ac;
+  border-color: #58bf72;
+}
+.myRecipesPage .header .selectedCardFilterLabel {
+  position: relative;
+  border: 1px solid #689c7b;
+  background-color: #f2d3ac;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.myRecipesPage .header .selectedCardFilterLabel p {
+  font-weight: 600;
+}
+.myRecipesPage .header .selectedCardFilterLabel .closeIcon {
+  z-index: 99;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+}
+.myRecipesPage .header .selectedCardFilterLabel:hover .closeIcon {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 .myRecipesPage .pageContent {
   display: flex;
@@ -318,7 +359,8 @@
   padding-bottom: 2rem;
 }
 .myRecipesPage .pageContent .rightPanel .cardViewPanel .myRecipesCard {
-  width: calc(34% - 2rem);
+  flex: 30%;
+  flex-grow: 2;
   border-radius: 0.75rem;
   background-color: #f2d3ac;
   height: auto;
@@ -460,11 +502,25 @@
 
 @media screen and (max-width: 950px) {
   .myRecipesPage {
-    margin-top: 2rem;
     row-gap: 1rem;
-    height: calc(100vh - 7rem);
-    padding: 0;
+    height: calc(100vh - 5.5rem);
+    width: 100%;
+    padding: 2rem 1rem 0 1rem;
+    margin-top: 0;
     overflow-y: hidden;
+  }
+  .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox {
+    width: 95%;
+    padding: 2rem 1rem;
+  }
+  .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .headerRow {
+    padding: 0;
+  }
+  .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm {
+    padding: 0 0;
+  }
+  .myRecipesPage .overlayWrapper .lightBoxOverlay .lightBox .noteBoxForm textArea {
+    height: 14rem;
   }
   .myRecipesPage .header {
     height: auto;
@@ -473,9 +529,12 @@
   }
   .myRecipesPage .header .cardViewFilter {
     width: 90%;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 0.5rem;
+  }
+  .myRecipesPage .header .cardViewFilter .filterIcon {
+    color: #689c7b;
   }
   .myRecipesPage .header .cardViewFilter::-webkit-scrollbar {
     background-color: #f2f2f2;
@@ -491,6 +550,9 @@
   }
   .myRecipesPage .pageContent .leftPanel {
     width: 100%;
+  }
+  .myRecipesPage .pageContent .leftPanel .directoryPanel {
+    padding: 0.5rem 0;
   }
   .myRecipesPage .pageContent .rightPanel {
     width: 100%;

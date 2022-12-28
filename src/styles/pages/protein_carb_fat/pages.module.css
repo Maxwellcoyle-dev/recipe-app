@@ -45,6 +45,7 @@
 }
 .pageFeed .header .cardViewFilter .cardFilterLabel:hover {
   background-color: #f2d3ac;
+  border-color: #56bf7b;
 }
 .pageFeed .header .cardViewFilter .selectedCardFilterLabel {
   position: relative;

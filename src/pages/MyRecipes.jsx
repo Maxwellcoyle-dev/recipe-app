@@ -11,6 +11,7 @@ import { RecipeView } from "../components/recipeView/RecipeView";
 import addRecipes from "../images/add-recipes.svg";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { BsList } from "react-icons/bs";
+import { MdFavorite } from "react-icons/md";
 
 export const MyRecipes = () => {
   const [labels, setLabels] = useState([]);
@@ -58,7 +59,11 @@ export const MyRecipes = () => {
         <div className={styles.myRecipesPage}>
           {showNoteBox && <NoteLightBox />}
           <div className={styles.header}>
-            <h1>My Recipes</h1>
+            <div className={styles.headerTitle}>
+              <MdFavorite className={styles.icon} />
+              <h1>My Recipes</h1>
+            </div>
+
             <CardViewFilter />
           </div>
           <div className={styles.pageContent}>

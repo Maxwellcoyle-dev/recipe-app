@@ -62,6 +62,7 @@ export const NoteLightBox = () => {
             <textarea
               type="text"
               placeholder="Type notes here"
+              className={styles.textArea}
               value={newNote}
               onChange={(e) => handleNoteChange(e)}
             />

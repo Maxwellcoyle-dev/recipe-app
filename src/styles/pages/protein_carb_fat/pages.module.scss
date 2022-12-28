@@ -54,6 +54,7 @@ $color-primary-hover: #56bf7b;
 
         &:hover {
           background-color: $color-secondary-tan;
+          border-color: $color-primary-hover;
         }
       }
 
