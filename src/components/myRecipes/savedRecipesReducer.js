@@ -1,3 +1,23 @@
+import { toast } from "react-toastify";
+
+const recipeSaved = () => {
+  toast.success("Recipe saved ♥", {
+    toastId: "saved",
+  });
+};
+
+const recipeDeleted = () => {
+  toast.success("Recipe deleted", {
+    toastId: "deleted",
+  });
+};
+
+const noteAdded = () => {
+  toast.success("Note saved ++ ", {
+    toastId: "note-added",
+  });
+};
+
 export const savedRecipesReducer = (savedRecipes, action) => {
   switch (action.type) {
     case "loacal-storage-recover-saved-list": {
@@ -8,6 +28,7 @@ export const savedRecipesReducer = (savedRecipes, action) => {
         (rec) => rec.label === action.recipe.label
       );
       if (!found) {
+        recipeSaved();
         return [
           {
             id: Math.floor(Math.random() * 10000),
@@ -23,7 +44,10 @@ export const savedRecipesReducer = (savedRecipes, action) => {
     }
 
     case "delete-recipe": {
-      return savedRecipes?.filter((rec) => rec.recipe.label !== action.label);
+      return savedRecipes?.filter((rec) => {
+        recipeDeleted();
+        return rec.recipe.label !== action.label;
+      });
     }
 
     case "note-box-toggle": {
@@ -60,6 +84,7 @@ export const savedRecipesReducer = (savedRecipes, action) => {
     case "save-note": {
       return savedRecipes?.map((rec) => {
         if (rec.id === action.id) {
+          noteAdded();
           return { ...rec, showNoteBox: false };
         }
         return rec;

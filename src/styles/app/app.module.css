@@ -9,4 +9,7 @@
   top: 0;
   left: 0;
   width: 100%;
+}
+.App .toastContainer {
+  top: 3rem;
 }/*# sourceMappingURL=app.module.css.map */

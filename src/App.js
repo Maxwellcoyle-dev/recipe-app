@@ -13,6 +13,9 @@ import { savedRecipesReducer } from "./components/myRecipes/savedRecipesReducer"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 let existingRecipes = window.localStorage.getItem("SAVED_RECIPES");
 
 const queryClient = new QueryClient();
@@ -104,6 +107,13 @@ function App() {
           </searchContext.Provider>
         </QueryClientProvider>
       </div>
+      <ToastContainer
+        autoClose={2000}
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+        progressStyle={{ backgroundColor: "#73bf86" }}
+        className={styles.toastContainer}
+      />
     </appContext.Provider>
   );
 }
