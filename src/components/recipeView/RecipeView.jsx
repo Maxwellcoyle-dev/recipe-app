@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "../../styles/recipeView/recipeView.module.css";
 import { useScrollLock } from "../../hooks/useScrollLock";
 import { AiOutlineClose } from "react-icons/ai";
-import { SaveIcon } from "../home/SaveIcon";
+import { SaveIcon } from "./SaveIcon";
 import { appContext } from "../../context/appContext";
 import { searchContext } from "../../context/searchContext";
 
@@ -78,48 +78,44 @@ export const RecipeView = () => {
     <div className={styles.recipeViewBackDrop}>
       <div className={styles.recipeViewCard}>
         <div className={styles.headerRow}>
-          <div className={styles.headerContent}>
-            <h2>{recipeItem?.label}</h2>
-            <a href={recipeItem?.url}>
-              <p>by {recipeItem?.source}</p>
+          <h2>{recipeItem?.label}</h2>
+          <a href={recipeItem?.url} className={styles.sourceTag}>
+            <p>by {recipeItem?.source}</p>
+          </a>
+          <div className={styles.buttonDiv}>
+            <a href={recipeItem?.url} target="_blank">
+              <button className={styles.primaryBtn}>See Full Recipe</button>
             </a>
-            <div className={styles.buttonDiv}>
-              <a href={recipeItem?.url} target="_blank">
-                <button className={styles.primaryBtn}>See Full Recipe</button>
-              </a>
-              {found ? (
-                <button
-                  className={styles.secondaryBtn}
-                  onClick={() => {
-                    savedRecipesDispatch({
-                      type: "delete-recipe",
-                      label: recipeItem?.label,
-                    });
-                  }}
-                >
-                  Remove from My Recipes
-                </button>
-              ) : (
-                <button
-                  className={styles.secondaryBtn}
-                  onClick={() => {
-                    savedRecipesDispatch({
-                      type: "save-recipe",
-                      recipe: recipeItem,
-                    });
-                  }}
-                >
-                  Add to My Recipes
-                </button>
-              )}
-            </div>
+            {found ? (
+              <button
+                className={styles.secondaryBtn}
+                onClick={() => {
+                  savedRecipesDispatch({
+                    type: "delete-recipe",
+                    label: recipeItem?.label,
+                  });
+                }}
+              >
+                Remove Recipe
+              </button>
+            ) : (
+              <button
+                className={styles.secondaryBtn}
+                onClick={() => {
+                  savedRecipesDispatch({
+                    type: "save-recipe",
+                    recipe: recipeItem,
+                  });
+                }}
+              >
+                Save Recipe
+              </button>
+            )}
           </div>
+
           <div className={styles.imgDiv}>
             <img alt={recipeItem?.label} src={recipeItem?.image} />
           </div>
-        </div>
-
-        <div className={styles.secondRow}>
           {!showNoteInput ? (
             <div className={styles.notesDiv}>
               <h3>Notes</h3>
@@ -156,7 +152,7 @@ export const RecipeView = () => {
           ) : (
             <div className={styles.addNote}>
               <h3>Add Note</h3>
-              <form>
+              <form onSubmit={(e) => handleSaveNote(e)}>
                 <textarea
                   type="text"
                   placeholder="Type notes here"
@@ -165,10 +161,7 @@ export const RecipeView = () => {
                   onChange={(e) => handleNoteChange(e)}
                 />
                 <div className={styles.buttonDiv}>
-                  <button
-                    className={styles.primaryBtn}
-                    onClick={(e) => handleSaveNote(e)}
-                  >
+                  <button type="submit" className={styles.primaryBtn}>
                     Add
                   </button>
                   <button
@@ -187,30 +180,31 @@ export const RecipeView = () => {
               </div>
             </div>
           )}
-          <div className={styles.primaryInfoRow}>
+        </div>
+
+        <div className={styles.secondRow}>
+          <div className={styles.overviewDiv}>
+            <h3>Recipe Info</h3>
+            <div className={styles.items}>
+              <p>{recipeItem?.dishType}</p>
+              <p>{recipeItem?.cuisineType}</p>
+              <p>{Math.round(recipeItem?.calories)} calories</p>
+            </div>
+          </div>
+          {recipeItem?.cautions?.length > 0 && (
             <div className={styles.overviewDiv}>
-              <h3>Recipe Info</h3>
+              <h3>Cautions</h3>
               <div className={styles.items}>
-                <p>{recipeItem?.dishType}</p>
-                <p>{recipeItem?.cuisineType}</p>
-                <p>{Math.round(recipeItem?.calories)} calories</p>
+                {recipeItem?.cautions?.map((caution, index) => {
+                  return (
+                    <p key={index} style={{ borderColor: "red" }}>
+                      {caution}
+                    </p>
+                  );
+                })}
               </div>
             </div>
-            {recipeItem?.cautions?.length > 0 && (
-              <div className={styles.overviewDiv}>
-                <h3>Cautions</h3>
-                <div className={styles.items}>
-                  {recipeItem?.cautions?.map((caution, index) => {
-                    return (
-                      <p key={index} style={{ borderColor: "red" }}>
-                        {caution}
-                      </p>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
+          )}
         </div>
 
         <div className={styles.infoDiv}>

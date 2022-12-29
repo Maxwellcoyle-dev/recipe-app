@@ -101,6 +101,7 @@ $color-primary-hover: #56bf7b;
         padding: 0.5rem;
         border-radius: 1rem;
         border: 1px solid transparent;
+        background-color: $color-secondary-white;
         height: fit-content;
         display: flex;
         align-items: center;
@@ -111,9 +112,14 @@ $color-primary-hover: #56bf7b;
           width: 3rem;
           height: 3rem;
           color: $color-primary;
+          transition: 0.2s;
         }
         &:hover {
-          background-color: $color-secondary-white;
+          background-color: $color-primary-hover;
+
+          .filterIcon {
+            color: $color-secondary-white;
+          }
         }
       }
       .searchHistoryIconDiv {

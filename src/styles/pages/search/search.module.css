@@ -91,6 +91,7 @@
   padding: 0.5rem;
   border-radius: 1rem;
   border: 1px solid transparent;
+  background-color: #f2f2f2;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -104,9 +105,13 @@
   width: 3rem;
   height: 3rem;
   color: #73bf86;
+  transition: 0.2s;
 }
 .search .stickyWrapper .searchOptionInputs .filterIconDiv:hover {
-  background-color: #f2f2f2;
+  background-color: #56bf7b;
+}
+.search .stickyWrapper .searchOptionInputs .filterIconDiv:hover .filterIcon {
+  color: #f2f2f2;
 }
 .search .stickyWrapper .searchOptionInputs .searchHistoryIconDiv {
   display: flex;

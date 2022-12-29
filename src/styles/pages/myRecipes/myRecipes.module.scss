@@ -287,6 +287,7 @@ $color-secondary-gray: #7b7773;
 
       p {
         font-weight: 600;
+        width: max-content;
       }
 
       .closeIcon {
@@ -306,7 +307,10 @@ $color-secondary-gray: #7b7773;
   }
 
   .pageContent {
+    width: 100%;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: calc(100vh - 11.5rem);
     overflow: hidden;
 
@@ -385,6 +389,8 @@ $color-secondary-gray: #7b7773;
     }
 
     .rightPanel {
+      height: 100%;
+      overflow-y: auto;
       width: 70%;
       display: flex;
       flex-direction: column;
@@ -392,7 +398,6 @@ $color-secondary-gray: #7b7773;
       padding: 0 1rem;
 
       .cardViewPanel {
-        overflow-y: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -400,8 +405,7 @@ $color-secondary-gray: #7b7773;
         padding-bottom: 2rem;
 
         .myRecipesCard {
-          flex: 30%;
-          flex-grow: 2;
+          width: 32%;
           border-radius: 0.75rem;
           background-color: $color-secondary-tan;
           height: auto;
@@ -564,7 +568,7 @@ $color-secondary-gray: #7b7773;
     row-gap: 1rem;
     height: calc(100vh - 5.5rem);
     width: 100%;
-    padding: 2rem 1rem 0 1rem;
+    padding: 2rem 0.25rem 0 0.25rem;
     margin-top: 0;
     overflow-y: hidden;
 
@@ -595,10 +599,13 @@ $color-secondary-gray: #7b7773;
       align-items: center;
 
       .cardViewFilter {
-        width: 90%;
+        width: 100%;
+        height: 4rem;
         overflow-x: auto;
         overflow-y: hidden;
         padding-bottom: 0.5rem;
+        padding-right: 0.5rem;
+        padding-left: 0;
 
         .filterIcon {
           color: $color-primary;
@@ -607,7 +614,7 @@ $color-secondary-gray: #7b7773;
         &::-webkit-scrollbar {
           background-color: $color-secondary-white;
           border-radius: 0.5rem;
-          height: 0.5rem;
+          height: 0.25rem;
         }
         &::-webkit-scrollbar-thumb {
           background-color: $color-primary;
