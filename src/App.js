@@ -108,11 +108,12 @@ function App() {
         </QueryClientProvider>
       </div>
       <ToastContainer
-        autoClose={2000}
+        autoClose={1000}
         pauseOnHover={false}
         pauseOnFocusLoss={false}
         progressStyle={{ backgroundColor: "#73bf86" }}
         className={styles.toastContainer}
+        newestOnTop={true}
       />
     </appContext.Provider>
   );
