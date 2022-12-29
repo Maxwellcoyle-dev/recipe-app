@@ -3,18 +3,24 @@ import { toast } from "react-toastify";
 const recipeSaved = () => {
   toast.success("Recipe saved ♥", {
     toastId: "saved",
+    draggable: true,
+    closeOnClick: true,
   });
 };
 
 const recipeDeleted = () => {
   toast.success("Recipe deleted", {
     toastId: "deleted",
+    draggable: true,
+    closeOnClick: true,
   });
 };
 
 const noteAdded = () => {
   toast.success("Note saved ++ ", {
     toastId: "note-added",
+    draggable: true,
+    closeOnClick: true,
   });
 };
 
