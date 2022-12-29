@@ -27,6 +27,7 @@ export const savedRecipesReducer = (savedRecipes, action) => {
     }
 
     case "note-box-toggle": {
+      console.log(action);
       return savedRecipes?.map((rec) => {
         if (rec.showNoteBox) {
           return { ...rec, showNoteBox: false };

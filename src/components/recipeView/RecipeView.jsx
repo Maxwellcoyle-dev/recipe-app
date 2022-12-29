@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../../styles/recipeView/recipeView.module.css";
 import { useScrollLock } from "../../hooks/useScrollLock";
 import { AiOutlineClose } from "react-icons/ai";
@@ -7,13 +7,46 @@ import { appContext } from "../../context/appContext";
 import { searchContext } from "../../context/searchContext";
 
 export const RecipeView = () => {
+  const [currentNote, setCurrentNote] = useState("");
+  const [id, setId] = useState(0);
+  const [showNoteInput, setShowNoteInput] = useState(false);
+  const [newNote, setNewNote] = useState("");
   const { lockScroll, unlockScroll } = useScrollLock();
   const { savedRecipes, savedRecipesDispatch } = useContext(searchContext);
   const { setShowRecipeView, recipeItem } = useContext(appContext);
 
-  useEffect(() => {
-    console.log(recipeItem);
+  const handleNoteChange = (e) => {
+    savedRecipesDispatch({
+      type: "update-note",
+      note: e.target.value,
+      id: id,
+    });
+  };
 
+  const handleClearNote = (e) => {
+    e.preventDefault();
+    savedRecipesDispatch({
+      type: "clear-note",
+      id: id,
+    });
+  };
+
+  const handleSaveNote = (e) => {
+    e.preventDefault();
+    savedRecipesDispatch({
+      type: "save-note",
+      id: id,
+    });
+  };
+
+  const handleCloseBox = () => {
+    savedRecipesDispatch({
+      type: "note-box-toggle",
+      id: id,
+    });
+  };
+
+  useEffect(() => {
     lockScroll();
 
     return () => {
@@ -24,6 +57,22 @@ export const RecipeView = () => {
   let found = savedRecipes?.some(
     (item) => item?.recipe?.label === recipeItem?.label
   );
+
+  useEffect(() => {
+    console.log(recipeItem);
+    console.log(savedRecipes);
+
+    if (found) {
+      savedRecipes?.map((item) => {
+        if (item?.recipe.label === recipeItem?.label) {
+          setCurrentNote(item?.note);
+          setId(item.id);
+          setShowNoteInput(item.showNoteBox);
+          setNewNote(item.note);
+        }
+      });
+    }
+  }, [savedRecipes, recipeItem]);
 
   return (
     <div className={styles.recipeViewBackDrop}>
@@ -69,33 +118,99 @@ export const RecipeView = () => {
             <img alt={recipeItem?.label} src={recipeItem?.image} />
           </div>
         </div>
-        <div className={styles.notesDiv}>
-          <h3>Notes</h3>
-          <p></p>
-        </div>
-        <div className={styles.primaryInfoRow}>
-          <div className={styles.overviewDiv}>
-            <h3>Recipe Info</h3>
-            <div className={styles.items}>
-              <p>{recipeItem?.dishType}</p>
-              <p>{recipeItem?.cuisineType}</p>
-              <p>{Math.round(recipeItem?.calories)} calories</p>
+
+        <div className={styles.secondRow}>
+          {!showNoteInput ? (
+            <div className={styles.notesDiv}>
+              <h3>Notes</h3>
+              {found ? (
+                currentNote === "" ? (
+                  <p
+                    className={styles.addNoteText}
+                    onClick={() => {
+                      savedRecipesDispatch({
+                        type: "note-box-toggle",
+                        id: id,
+                      });
+                    }}
+                  >
+                    Click here to add a note.
+                  </p>
+                ) : (
+                  <p>{currentNote}</p>
+                )
+              ) : (
+                <p
+                  className={styles.saveRecipeText}
+                  onClick={() => {
+                    savedRecipesDispatch({
+                      type: "save-recipe",
+                      recipe: recipeItem,
+                    });
+                  }}
+                >
+                  Save recipe to add a note.
+                </p>
+              )}
             </div>
-          </div>
-          {recipeItem?.cautions?.length > 0 && (
-            <div className={styles.overviewDiv}>
-              <h3>Cautions</h3>
-              <div className={styles.items}>
-                {recipeItem?.cautions?.map((caution, index) => {
-                  return (
-                    <p key={index} style={{ borderColor: "red" }}>
-                      {caution}
-                    </p>
-                  );
-                })}
+          ) : (
+            <div className={styles.addNote}>
+              <h3>Add Note</h3>
+              <form>
+                <textarea
+                  type="text"
+                  placeholder="Type notes here"
+                  className={styles.textArea}
+                  value={newNote}
+                  onChange={(e) => handleNoteChange(e)}
+                />
+                <div className={styles.buttonDiv}>
+                  <button
+                    className={styles.primaryBtn}
+                    onClick={(e) => handleSaveNote(e)}
+                  >
+                    Add
+                  </button>
+                  <button
+                    className={styles.secondaryBtn}
+                    onClick={handleClearNote}
+                  >
+                    Clear
+                  </button>
+                </div>
+              </form>
+              <div className={styles.closeIconDiv}>
+                <AiOutlineClose
+                  className={styles.closeIcon}
+                  onClick={(e) => handleCloseBox(e)}
+                />
               </div>
             </div>
           )}
+          <div className={styles.primaryInfoRow}>
+            <div className={styles.overviewDiv}>
+              <h3>Recipe Info</h3>
+              <div className={styles.items}>
+                <p>{recipeItem?.dishType}</p>
+                <p>{recipeItem?.cuisineType}</p>
+                <p>{Math.round(recipeItem?.calories)} calories</p>
+              </div>
+            </div>
+            {recipeItem?.cautions?.length > 0 && (
+              <div className={styles.overviewDiv}>
+                <h3>Cautions</h3>
+                <div className={styles.items}>
+                  {recipeItem?.cautions?.map((caution, index) => {
+                    return (
+                      <p key={index} style={{ borderColor: "red" }}>
+                        {caution}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className={styles.infoDiv}>

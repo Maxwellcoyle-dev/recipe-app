@@ -16,6 +16,7 @@ $color-primary-hover: #56bf7b;
   justify-content: center;
   z-index: 999;
   background-color: rgba(128, 128, 128, 0.5);
+  cursor: default;
 
   .recipeViewCard {
     position: relative;
@@ -116,11 +117,12 @@ $color-primary-hover: #56bf7b;
       }
     }
 
-    .primaryInfoRow {
+    .secondRow {
       display: flex;
-      column-gap: 2rem;
-
-      .overviewDiv {
+      flex-wrap: wrap;
+      column-gap: 3rem;
+      .notesDiv {
+        width: 50%;
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
@@ -129,15 +131,138 @@ $color-primary-hover: #56bf7b;
           font-size: 1.3rem;
         }
 
-        .items {
+        .addNoteText {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .saveRecipeText {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .addNote {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        position: relative;
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        form {
+          width: 100%;
           display: flex;
-          column-gap: 0.5rem;
-          align-items: center;
-          p {
+          flex-direction: column;
+          row-gap: 0.5rem;
+
+          .textArea {
+            width: 100%;
+            height: 4rem;
+            resize: none;
+            background-color: $color-secondary-white;
             border: 1px solid $color-primary;
-            padding: 0.5rem;
             border-radius: 0.5rem;
-            font-weight: 600;
+            padding: 0.5rem;
+          }
+
+          .buttonDiv {
+            display: flex;
+            width: 100%;
+            column-gap: 1rem;
+            button {
+              width: 50%;
+              cursor: pointer;
+              font-size: 1.1rem;
+              transition: 0.25s;
+            }
+
+            .primaryBtn {
+              background-color: $color-primary;
+              color: $color-secondary-white;
+              border: 1px solid transparent;
+              border-radius: 0.25rem;
+              padding: 0.25rem 0;
+
+              &:hover {
+                background-color: $color-primary-hover;
+              }
+            }
+
+            .secondaryBtn {
+              background-color: $color-secondary-white;
+              color: $color-primary;
+              border: 1px solid transparent;
+              border-radius: 0.25rem;
+              padding: 0.25rem 0;
+
+              &:hover {
+                border: 1px solid $color-primary-hover;
+                color: $color-primary-hover;
+              }
+            }
+          }
+        }
+        .closeIconDiv {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 0.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.2s;
+
+          cursor: pointer;
+          .closeIcon {
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: 0.2s;
+          }
+          &:hover {
+            background-color: white;
+
+            .closeIcon {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+
+      .primaryInfoRow {
+        display: flex;
+        column-gap: 2rem;
+
+        .overviewDiv {
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.5rem;
+
+          h3 {
+            font-size: 1.3rem;
+          }
+
+          .items {
+            display: flex;
+            column-gap: 0.5rem;
+            align-items: center;
+            p {
+              border: 1px solid $color-primary;
+              padding: 0.5rem;
+              border-radius: 0.5rem;
+              font-weight: 600;
+            }
           }
         }
       }
