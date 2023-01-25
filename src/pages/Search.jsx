@@ -1,4 +1,4 @@
-import { useState, useContext, useRef, useEffect } from "react";
+import { useState, useContext } from "react";
 import styles from "../styles/pages/search/search.module.css";
 import { searchContext } from "../context/searchContext";
 import { SearchBar } from "../components/search/SearchBar";
@@ -13,7 +13,6 @@ import { appContext } from "../context/appContext";
 import { BsFilterLeft } from "react-icons/bs";
 
 export const Search = () => {
-  const [showSearchHistory, setShowSearchHistory] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const { refetchNextPageSearchResults } = useGetNextPageSearchResults();
   const { showRecipeView } = useContext(appContext);

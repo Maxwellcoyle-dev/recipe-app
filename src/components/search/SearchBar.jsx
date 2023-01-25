@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "../../styles/pages/search/search.module.css";
 import { searchContext } from "../../context/searchContext";
 import { AiOutlineArrowRight } from "react-icons/ai";

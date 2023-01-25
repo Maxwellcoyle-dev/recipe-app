@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "../../../styles/pages/myRecipes/myRecipes.module.css";
 import { searchContext } from "../../../context/searchContext";
 import { MdEditNote } from "react-icons/md";

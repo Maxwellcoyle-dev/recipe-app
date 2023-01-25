@@ -17,8 +17,6 @@ export const Navbar = () => {
 
   const location = useLocation();
 
-  const width = window.innerWidth;
-
   useEffect(() => {
     const changeNavColor = () => {
       const windowScrollPosition = window.scrollY;

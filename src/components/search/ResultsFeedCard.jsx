@@ -1,7 +1,7 @@
 import styles from "../../styles/pages/search/search.module.css";
 import { BsCardChecklist, BsClockHistory } from "react-icons/bs";
 import { SaveIcon } from "./SaveIcon";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { appContext } from "../../context/appContext";
 import { searchContext } from "../../context/searchContext";
 

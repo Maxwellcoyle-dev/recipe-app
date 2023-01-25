@@ -5,10 +5,10 @@ import { useGetNextPageDefaults } from "./useGetNextPageDefaults";
 
 export const useHomeQueries = () => {
   const [recipes, setRecipes] = useState([]);
-  const { homeNextPageUrl, setHomeNextPageUrl, homeRecipes, setHomeRecipes } =
+  const { setHomeNextPageUrl, homeRecipes, setHomeRecipes } =
     useContext(appContext);
   const { nextPageDefaultsQuery } = useGetNextPageDefaults();
-  const { defaultRecipesQuery, defaultRecipesStatus } = useGetDefaultRecipes();
+  const { defaultRecipesQuery } = useGetDefaultRecipes();
 
   useEffect(() => {
     if (defaultRecipesQuery && !nextPageDefaultsQuery) {
@@ -30,7 +30,7 @@ export const useHomeQueries = () => {
 
       setHomeNextPageUrl(nextPageDefaultsQuery?._links.next.href);
     }
-  }, [nextPageDefaultsQuery, setHomeNextPageUrl, setHomeRecipes]);
+  }, [nextPageDefaultsQuery, setHomeNextPageUrl, setHomeRecipes, homeRecipes]);
 
   return { recipes };
 };

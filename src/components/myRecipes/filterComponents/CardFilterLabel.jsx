@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styles from "../../../styles/pages/myRecipes/myRecipes.module.css";
 import { myRecipesContext } from "../../../context/myRecipesContext";
 import { TiDelete } from "react-icons/ti";
 
 export const CardFilterLabel = ({ label, id }) => {
-  const [hover, setHover] = useState(false);
   const { selectedLabel, setSelectedLabel } = useContext(myRecipesContext);
 
   const handleLabelSelect = () => {
@@ -16,22 +15,12 @@ export const CardFilterLabel = ({ label, id }) => {
   };
 
   return id === selectedLabel ? (
-    <div
-      className={styles.selectedCardFilterLabel}
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onClick={handleLabelSelect}
-    >
+    <div className={styles.selectedCardFilterLabel} onClick={handleLabelSelect}>
       <p>{label}</p>
       <TiDelete className={styles.closeIcon} />
     </div>
   ) : (
-    <div
-      className={styles.cardFilterLabel}
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onClick={handleLabelSelect}
-    >
+    <div className={styles.cardFilterLabel} onClick={handleLabelSelect}>
       <p>{label}</p>
     </div>
   );

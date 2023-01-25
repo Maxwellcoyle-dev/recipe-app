@@ -6,7 +6,7 @@ import { appContext } from "../context/appContext";
 import { HeroSection } from "../components/home/HeroSection";
 
 export const Home = () => {
-  const { showRecipeView, recipeItem } = useContext(appContext);
+  const { showRecipeView } = useContext(appContext);
 
   return (
     <div className={styles.home}>

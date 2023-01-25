@@ -59,9 +59,6 @@ export const RecipeView = () => {
   );
 
   useEffect(() => {
-    console.log(recipeItem);
-    console.log(savedRecipes);
-
     if (found) {
       savedRecipes?.map((item) => {
         if (item?.recipe.label === recipeItem?.label) {
@@ -70,9 +67,10 @@ export const RecipeView = () => {
           setShowNoteInput(item.showNoteBox);
           setNewNote(item.note);
         }
+        return null;
       });
     }
-  }, [savedRecipes, recipeItem]);
+  }, [savedRecipes, recipeItem, found]);
 
   return (
     <div className={styles.recipeViewBackDrop}>
@@ -83,7 +81,7 @@ export const RecipeView = () => {
             <p>by {recipeItem?.source}</p>
           </a>
           <div className={styles.buttonDiv}>
-            <a href={recipeItem?.url} target="_blank">
+            <a href={recipeItem?.url} target="_blank" rel="noreferrer">
               <button className={styles.primaryBtn}>See Full Recipe</button>
             </a>
             {found ? (

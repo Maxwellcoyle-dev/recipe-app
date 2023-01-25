@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "../../styles/pages/search/search.module.css";
 import { searchContext } from "../../context/searchContext";
 import { VscHistory } from "react-icons/vsc";
